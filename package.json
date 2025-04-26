@@ -2,7 +2,6 @@
   "name": "onewave",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://hiren-techvivanta.github.io/wave_money_web",
   "dependencies": {
     "@reown/appkit": "^1.3.0",
     "@reown/appkit-adapter-wagmi": "^1.7.3",
