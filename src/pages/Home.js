@@ -18,6 +18,8 @@ const Home = () => {
     <>
       <div className="container-fluid px-0">
         <Topnav2 />
+
+        
         <div className="position-relative">
           <div className="position-absolute hero-text">
             <div className="custom-border rounded-pill w-auto d-flex align-items-center p-2 w-75 mx-auto mx-md-0 w-md-50">
