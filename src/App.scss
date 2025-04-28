@@ -462,17 +462,17 @@ $input-focus-box-shadow: none !default;
   padding: 14px 40px;
   box-shadow: inset 0px 4px 4px rgba(255, 255, 255, 0.25);
   font-size: 24px;
-  font-family: 'PlusJakartaSans-Bold', sans-serif;
+  font-family: "PlusJakartaSans-Bold", sans-serif;
 }
 
 .label {
   color: #717171;
-  font-family: 'PlusJakartaSans-Medium', sans-serif;
+  font-family: "PlusJakartaSans-Medium", sans-serif;
 }
 
 .value {
   color: #717171;
-  font-family: 'PlusJakartaSans-Medium', sans-serif;
+  font-family: "PlusJakartaSans-Medium", sans-serif;
 }
 
 /* Media Queries for Responsiveness */
@@ -543,13 +543,13 @@ $input-focus-box-shadow: none !default;
 }
 
 .g-text {
-  background: linear-gradient(to bottom, #000000, #9F9F9F);
+  background: linear-gradient(to bottom, #000000, #9f9f9f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.hero-text{
-  top:30%;
+.hero-text {
+  top: 30%;
   left: 10%;
 }
 
@@ -559,7 +559,7 @@ $input-focus-box-shadow: none !default;
   }
 
   .spline > canvas {
-    width: auto !important;
+    width: 100% !important;
     height: 100% !important;
   }
 }
@@ -570,7 +570,7 @@ $input-focus-box-shadow: none !default;
   }
 
   .spline > canvas {
-    width: auto !important;
+    width: 100% !important;
     height: 100% !important;
   }
 }
@@ -581,7 +581,7 @@ $input-focus-box-shadow: none !default;
   }
 
   .spline > canvas {
-    width: auto !important;
+    width: 100% !important;
     height: 100% !important;
   }
 }
@@ -592,13 +592,13 @@ $input-focus-box-shadow: none !default;
   }
 }
 .custom-border {
-  border:1px solid #000000;
+  border: 1px solid #000000;
 }
 
 // CommunitySection.scss
 
 // Font imports - Replace with your actual font
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap");
 
 // Breakpoints
 $breakpoint-xxl: 1700px;
@@ -622,7 +622,7 @@ $breakpoint-xs: 576px;
   max-width: 1700px;
   margin: 0 auto;
   padding-bottom: 45px; // Space for the bottom frame
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 
   // Main container
   .community2 {
@@ -633,11 +633,11 @@ $breakpoint-xs: 576px;
     height: auto;
     min-height: 294px;
     overflow: hidden;
-    
+
     @media (min-width: $breakpoint-lg) {
       padding: 32px 15px;
     }
-    
+
     @media (min-width: $breakpoint-xl) {
       padding: 32px 10px;
     }
@@ -648,19 +648,19 @@ $breakpoint-xs: 576px;
     display: flex;
     flex-wrap: nowrap;
     gap: 20px;
-    
+
     @media (min-width: $breakpoint-lg) {
       justify-content: space-between;
       flex-wrap: nowrap;
       gap: 10px; // Reduced gap to fit in one line
     }
-    
+
     @media (max-width: $breakpoint-md) {
       flex-wrap: wrap;
       justify-content: space-around;
       gap: 30px;
     }
-    
+
     @media (max-width: $breakpoint-sm) {
       flex-direction: column;
       align-items: center;
@@ -676,13 +676,13 @@ $breakpoint-xs: 576px;
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 24px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     white-space: nowrap;
-    
+
     @media (max-width: $breakpoint-lg) {
       font-size: 22px;
     }
-    
+
     @media (max-width: $breakpoint-xs) {
       font-size: 20px;
       text-align: center;
@@ -695,15 +695,15 @@ $breakpoint-xs: 576px;
     flex-wrap: nowrap;
     gap: 15px; // Reduced gap
     align-items: center;
-    
+
     @media (max-width: $breakpoint-lg) {
       gap: 10px; // Even smaller gap for lg screens
     }
-    
+
     @media (max-width: $breakpoint-md) {
       justify-content: center;
     }
-    
+
     @media (max-width: $breakpoint-xs) {
       flex-wrap: wrap;
     }
@@ -720,25 +720,25 @@ $breakpoint-xs: 576px;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    
+
     @media (min-width: $breakpoint-lg) {
       width: 65px; // Even smaller for large screens to fit in line
       height: 65px;
     }
-    
+
     @media (max-width: $breakpoint-xs) {
       width: 60px;
       height: 60px;
     }
-    
+
     img {
       max-width: 90%; // Increased from 80%
       max-height: 90%; // Increased from 80%
       object-fit: contain;
       position: relative;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      // top: 50%;
+      // left: 50%;
+      // transform: translate(-50%, -50%);
       padding: 4px; // Reduced padding around images
     }
   }
@@ -748,7 +748,15 @@ $breakpoint-xs: 576px;
   }
 
   .blue-box {
-    background: linear-gradient(180deg, rgba(42, 171, 238, 1) 0%, rgba(34, 158, 217, 1) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(42, 171, 238, 1) 0%,
+      rgba(34, 158, 217, 1) 100%
+    );
+  }
+
+  .purpul-box {
+    background: rgba(88, 101, 242, 1);
   }
 
   .white-box {
@@ -764,7 +772,8 @@ $breakpoint-xs: 576px;
   }
 
   // Frame-42 and Frame-43 container adjustments
-  .frame-42, .frame-43 {
+  .frame-42,
+  .frame-43 {
     @media (min-width: $breakpoint-lg) {
       flex-shrink: 1;
     }
@@ -775,7 +784,7 @@ $breakpoint-xs: 576px;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    
+
     @media (min-width: $breakpoint-lg) {
       gap: 10px;
     }
@@ -787,16 +796,16 @@ $breakpoint-xs: 576px;
     flex-wrap: nowrap;
     gap: 12px; // Reduced gap
     align-items: center;
-    
+
     @media (min-width: $breakpoint-lg) {
       gap: 8px; // Even smaller gap for large screens
     }
-    
+
     @media (max-width: $breakpoint-md) {
       justify-content: center;
       flex-wrap: wrap;
     }
-    
+
     @media (max-width: $breakpoint-xs) {
       flex-direction: column;
       align-items: center;
@@ -814,32 +823,29 @@ $breakpoint-xs: 576px;
     justify-content: center;
     padding: 6px; // Reduced padding
     min-height: 70px; // Slightly reduced height
-    
+
     @media (min-width: $breakpoint-lg) {
       min-height: 65px; // Even smaller for large screens
     }
-    
+
     img {
       max-width: 95%; // Increased from 90%
       max-height: 90%; // Increased from 70%
       object-fit: contain;
       position: relative;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       padding: 3px; // Reduced padding around images
     }
-    
+
     @media (max-width: $breakpoint-md) {
-      &.logo-box-lg, 
-      &.logo-box-md, 
-      &.logo-box-sm, 
+      &.logo-box-lg,
+      &.logo-box-md,
+      &.logo-box-sm,
       &.logo-box-xl {
         width: calc(50% - 8px);
         min-width: 120px;
       }
     }
-    
+
     @media (max-width: $breakpoint-xs) {
       width: 100% !important;
       max-width: 280px;
@@ -851,7 +857,7 @@ $breakpoint-xs: 576px;
     @media (min-width: $breakpoint-lg) {
       width: 180px; // Reduced from 200px
     }
-    
+
     @media (max-width: $breakpoint-lg) {
       width: 200px;
     }
@@ -861,7 +867,7 @@ $breakpoint-xs: 576px;
     @media (min-width: $breakpoint-lg) {
       width: 130px; // Reduced from 149px
     }
-    
+
     @media (max-width: $breakpoint-lg) {
       width: 149px;
     }
@@ -871,7 +877,7 @@ $breakpoint-xs: 576px;
     @media (min-width: $breakpoint-lg) {
       width: 100px; // Reduced from 120px
     }
-    
+
     @media (max-width: $breakpoint-lg) {
       width: 120px;
     }
@@ -881,10 +887,9 @@ $breakpoint-xs: 576px;
     @media (min-width: $breakpoint-lg) {
       width: 210px; // Reduced from 243px
     }
-    
+
     @media (max-width: $breakpoint-lg) {
       width: 243px;
-      
     }
   }
 
@@ -892,9 +897,442 @@ $breakpoint-xs: 576px;
   .frame-101 {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(-1px);
     bottom: 0;
     width: 327px;
     height: 45px;
   }
+}
+
+// welcome part
+
+// Breakpoints
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "No breakpoint found for `#{$breakpoint}`.";
+  }
+}
+
+// Font settings
+@mixin font-plus-jakarta($weight, $size) {
+  font-family: "PlusJakartaSans-#{$weight}", sans-serif;
+  font-size: $size;
+  font-weight: if(
+    $weight == "ExtraBold",
+    800,
+    if(
+      $weight == "Bold",
+      700,
+      if($weight == "SemiBold", 600, if($weight == "Medium", 500, 400))
+    )
+  );
+}
+
+.welcome {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  padding: 2rem 1rem;
+
+  @include respond-to(md) {
+    flex-direction: row;
+    min-height: 613px;
+    padding: 3rem;
+  }
+
+  &__image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+    @include respond-to(md) {
+      width: 40%;
+      margin-bottom: 0;
+    }
+
+    @include respond-to(lg) {
+      width: 35%;
+    }
+  }
+
+  &spline-2 {
+    margin: 0;
+    padding: 0;
+    width: 100% !important;
+    height: 100vh !important;
+    overflow: visible !important;
+
+    &canvas {
+      width: 100% !important;
+      // max-width: 100% !important;
+      height: 100% !important;
+      // max-height: 100% !important;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    object-fit: cover;
+
+    // &:first-child {
+    //   width: 100% !important;
+    //   max-width: 100% !important;
+    //   max-height: auto !important;
+    // }
+
+    @include respond-to(xs) {
+      max-width: 90%;
+      height: auto !important;
+    }
+
+    @include respond-to(md) {
+      max-width: 90%;
+      height: auto !important;
+    }
+
+    @include respond-to(lg) {
+      max-width: 100%;
+      height: auto !important;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+
+    @include respond-to(md) {
+      width: 60%;
+      padding-left: 2rem;
+    }
+
+    @include respond-to(lg) {
+      width: 65%;
+      gap: 2rem;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__tag {
+    background: linear-gradient(to left, #2477f1, #2477f1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @include font-plus-jakarta("ExtraBold", 1rem);
+    text-transform: uppercase;
+
+    @include respond-to(md) {
+      font-size: 1.2rem;
+    }
+
+    @include respond-to(lg) {
+      font-size: 1.375rem; // 22px
+    }
+  }
+
+  &__title-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(159, 159, 159, 1) 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @include font-plus-jakarta("Bold", 1.75rem);
+    margin: 0;
+
+    @include respond-to(md) {
+      font-size: 2.25rem;
+    }
+
+    @include respond-to(lg) {
+      font-size: 3rem; // 48px
+    }
+  }
+
+  &__description {
+    background: linear-gradient(to left, #4d4d4d, #4d4d4d);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @include font-plus-jakarta("Medium", 1rem);
+    margin: 0;
+    line-height: 1.5;
+
+    @include respond-to(md) {
+      font-size: 1.125rem;
+    }
+
+    @include respond-to(lg) {
+      font-size: 1.375rem; // 22px
+    }
+  }
+
+  &__features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    align-items: center;
+    margin-top: 0.5rem;
+
+    @include respond-to(md) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__feature {
+    background: linear-gradient(to left, #252525, #252525);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @include font-plus-jakarta("SemiBold", 0.875rem);
+    white-space: nowrap;
+
+    @include respond-to(md) {
+      font-size: 1rem;
+    }
+
+    @include respond-to(lg) {
+      font-size: 1.375rem; // 22px
+    }
+  }
+
+  &__dot {
+    background: #252525;
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+
+    @include respond-to(md) {
+      width: 8px;
+      height: 8px;
+    }
+
+    @include respond-to(lg) {
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
+
+// partners
+.partners {
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  padding-bottom: 45px;
+  position: relative;
+
+  &__container {
+    padding: 30px 0;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    background: #f5f5f5;
+    border: 1px solid #cdcdcd;
+  }
+
+  &__title {
+    background: linear-gradient(to left, #4d4d4d, #4d4d4d);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @include font-plus-jakarta("Bold", 24px);
+    text-align: center;
+    margin: 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 24px;
+    width: 100%;
+    justify-items: center;
+    overflow-x: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include respond-to(sm) {
+      grid-template-columns: repeat(7, 1fr);
+    }
+
+    @include respond-to(md) {
+      grid-template-columns: repeat(7, 1fr);
+    }
+
+    @include respond-to(lg) {
+      grid-template-columns: repeat(7, 1fr);
+      gap: 32px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    height: 100px;
+  }
+
+  &__logo {
+    max-width: 100%;
+    max-height: 80px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.frame-102 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(-1px);
+  bottom: 0;
+  width: 327px;
+  height: 45px;
+  z-index: 4;
+}
+
+// utilitis
+
+// Colors
+$blue-gradient: linear-gradient(
+  146.06deg,
+  rgba(36, 119, 241, 0.7) 0%,
+  rgba(255, 255, 255, 0) 100%
+);
+
+$blue-border: linear-gradient(
+  145.48deg,
+  rgba(36, 119, 241, 1) 0%,
+  rgba(255, 255, 255, 1) 97.59%
+);
+
+$feature-gradient: linear-gradient(
+  154.84deg,
+  rgba(26, 119, 255, 0.7) 0%,
+  rgba(206, 226, 255, 0.7) 100%
+);
+
+// General styles
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "PlusJakartaSans-Regular", sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  
+  @include respond-to(lg) {
+    padding: 0 30px;
+  }
+}
+
+// OneWave Utilities Section
+.utilities-card-border {
+  border: 2px solid transparent;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+  background: 
+    linear-gradient(135deg, #fff 0%, #FFFFFF 98%) padding-box, 
+    linear-gradient(135deg, #2477F1 0%, #FFFFFF 98%) border-box;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      background: linear-gradient(135deg, #2476f120 0%, #ffffff00 98%);
+      border-radius: 1rem;
+    }
+
+    &img {
+      z-index: 2;
+    }
+}
+
+.u-card-cont {
+  width: 424px;
+  // height: 604px;
+}
+
+
+.utilities-grid {
+  display: flex;
+  grid-template-columns: repeat(4, 1fr); /* 5 columns */
+  gap: 20px;
+  padding: 20px;
+}
+
+.utility-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+  width: 100%;         /* grid makes them auto-fit */
+  height: 300px;        /* fixed height */
+  display: flex;        /* center content vertically */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Special bigger card */
+.wide-card {
+  grid-column: span 2; /* spans across 2 columns */
+  height: 300px; /* same height */
 }
