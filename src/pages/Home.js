@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Topnav2 from "../components/Topnav2";
 import Spline from "@splinetool/react-spline";
 
@@ -26,10 +26,35 @@ import i20 from "../assets/images/nft.png";
 import i21 from "../assets/images/staking.png";
 import i22 from "../assets/images/finlearn.png";
 import i23 from "../assets/images/card.png";
-import UtilityCard from "../components/UtilityCard";
-import FeatureCard from "../components/FeatureCard";
+import i24 from "../assets/images/Exchange.png";
+import i25 from "../assets/images/fram-102.png";
+
+import i26 from "../assets/images/aemethish.png";
+import i27 from "../assets/images/emrald.png";
+import i28 from "../assets/images/iron.png";
+import i29 from "../assets/images/ore.png";
+import i30 from "../assets/images/ruby.png";
+import i31 from "../assets/images/capsule.png";
+import i32 from "../assets/images/stare.png";
+import i33 from "../assets/images/dimoand.png";
+import i34 from "../assets/images/gold.png";
+import i35 from "../assets/images/lapis.png";
+import i36 from "../assets/images/wave.png";
+import i37 from "../assets/images/bluejems.png";
+import i38 from "../assets/images/bluestone.png";
+import { useNavigate } from "react-router-dom";
+
+import Highcharts from "highcharts";
+import HighchartsReact from "highcharts-react-official";
+
+import i39 from "../assets/images/Team1.png";
+import i40 from "../assets/images/Team2.png";
+import i41 from "../assets/images/Team3.png";
+import i42 from "../assets/images/Team4.png";
+import i43 from "../assets/images/Team5.png";
 
 const Home = () => {
+  const navigate = useNavigate();
   const partners = [
     // { id: 1, name: 'Angel', image: 'angel-logo-light0.png', width: 200 },
     // { id: 2, name: 'Bitgert', image: 'bitgert0.png', width: 200 },
@@ -44,6 +69,122 @@ const Home = () => {
     //   { id: 11, name: 'Partner 11', image: 'partner-110.png', width: 100 },
     //   { id: 12, name: 'Partner 12', image: 'partner-120.png', width: 100 },
   ];
+
+  const options = {
+    chart: {
+      type: "pie",
+    },
+    title: {
+      text: "",
+    },
+    tooltip: {
+      valueSuffix: "%",
+    },
+    // subtitle: {
+    //     text:
+    //     'Source:<a href="https://www.mdpi.com/2072-6643/11/3/684/htm" target="_default">MDPI</a>'
+    // },
+    plotOptions: {
+      pie: {
+        allowPointSelect: true,
+        cursor: "pointer",
+        dataLabels: [
+          {
+            enabled: true,
+            distance: 20,
+          },
+          {
+            enabled: true,
+            distance: -40,
+            format: "{point.percentage:.1f}%",
+            style: {
+              // fontSize: "1.2em",
+              textOutline: "none",
+              opacity: 0.7,
+            },
+            filter: {
+              operator: ">",
+              property: "percentage",
+              value: 1,
+            },
+          },
+        ],
+      },
+    },
+    series: [
+      {
+        name: "Percentage",
+        colorByPoint: true,
+        data: [
+          {
+            name: "Pre-sale & Fairsale",
+            y: 23,
+          },
+          {
+            name: "Staking Rewards",
+            // sliced: true,
+            // selected: true,
+            y: 15,
+          },
+          {
+            name: "Team",
+            y: 8,
+          },
+          {
+            name: "Advisors",
+            y: 5,
+          },
+          {
+            name: "Marketing",
+            y: 12,
+          },
+          {
+            name: "Airdrop",
+            y: 4,
+          },
+          {
+            name: "Ecosystem Devlopment",
+            y: 17,
+          },
+          {
+            name: "Liquidity",
+            y: 16,
+          },
+        ],
+      },
+    ],
+  };
+
+  const PresaleCard = ({ phase, price, cliff, vesting }) => {
+    return (
+      <div className="presale-card">
+        <h2 className="presale-card__title">Presale Phase {phase}</h2>
+        <div className="presale-card__divider"></div>
+
+        <div className="presale-card__details">
+          <div className="presale-card__detail-row">
+            <span className="presale-card__label">Price</span>
+            <span className="presale-card__value">{price}</span>
+            <div className="presale-card__line"></div>
+          </div>
+
+          <div className="presale-card__detail-row">
+            <span className="presale-card__label">Cliff</span>
+            <span className="presale-card__value">{cliff}</span>
+            <div className="presale-card__line"></div>
+          </div>
+
+          <div className="presale-card__detail-row">
+            <span className="presale-card__label">Vesting</span>
+            <span className="presale-card__value">{vesting}</span>
+            <div className="presale-card__line"></div>
+          </div>
+        </div>
+
+        <button className="presale-card__button">Buy Now</button>
+      </div>
+    );
+  };
 
   return (
     <>
@@ -259,104 +400,491 @@ const Home = () => {
             OneWave’s Innovative Utilities
           </h1>
         </div>
-        <div className="d-flex gap-4 justify-content-center align-items-start" style={{gridTemplateColumns: "repeat(4, 1fr)"}}>
-          <div className="u-card-cont">
-            <div className="card rounded-4 utilities-card-border shadow">
-              <div className="card-body p-4">
-                <h4 className="text-center fw-bold">Wave Blockchain</h4>
-                <p className="text-center m-0" style={{ color: "#717171" }}>
+        {/* test */}
+
+        <div className="container">
+          <div class="frame-135">
+            <div class="frame-134 w-100">
+              <div class="frame-60 border-liner">
+                <h4 className="text-center fw-bolder pt-5">Wave Blockchain</h4>
+                {/* <div class="wave-blockchain"></div> */}
+
+                <p className="text-center fs-5" style={{ color: "#717171" }}>
                   Lorem Ipsum dolor sit amet, This is <br />
                   is only dummy text. We will <br />
                   replace this with real one later.
                 </p>
-                <img src={i18} className="img-fluid" alt="Blockchain" />
+                <img
+                  class="_723-d-9-c-90-c-5-d-8-4-cd-6-9-d-44-51591-eb-8464-e-1"
+                  src={i18}
+                />
               </div>
-            </div>
-          </div>
-          <div className="u-card-cont">
-            <div className="card rounded-4 utilities-card-border shadow">
-              <div className="card-body p-4 pb-0">
-                <h4 className="text-start fw-bold">Wave Staking</h4>
-                <p className="text-start m-0" style={{ color: "#717171" }}>
+              <div class="frame-118 border-liner">
+                <h4 className="text-center fw-bolder pt-5">Crypto Gaming</h4>
+
+                <p className="text-center fs-5" style={{ color: "#717171" }}>
                   Lorem Ipsum dolor sit amet, This is <br />
                   is only dummy text. We will <br />
                   replace this with real one later.
                 </p>
-                <div className="text-end">
-                  <img src={i21} className="img-fluid" alt="Blockchain" />
+                <img
+                  class="be-2-a-6-b-06-2-fa-9-442-e-b-2-a-0-583-f-15864963"
+                  src={i19}
+                />
+              </div>
+              <div class="frame-117 border-liner">
+                <h4 className="text-center fw-bolder pt-5">
+                  Wave NFT Marketplace
+                </h4>
+
+                <p className="text-center fs-5" style={{ color: "#717171" }}>
+                  Lorem Ipsum dolor sit amet, This is <br />
+                  is only dummy text. We will <br />
+                  replace this with real one later.
+                </p>
+
+                <img
+                  class="d-793-f-9-bc-2206-4900-80-cc-3-e-2-a-1251714-b"
+                  src={i20}
+                />
+              </div>
+              <div class="frame-110 border-liner">
+                <h4 className="text-start fw-bolder pt-5 ps-3">Wave Staking</h4>
+                <p
+                  className="text-start fs-5 ps-3"
+                  style={{ color: "#717171" }}
+                >
+                  Lorem Ipsum dolor sit amet, This is <br />
+                  is only dummy text. We will <br />
+                  replace this with real one later.
+                </p>
+                <img
+                  class="b-23-a-9-d-38-5-b-11-4-ded-a-2-dd-bdbf-051-e-10-e-3"
+                  src={i21}
+                />
+              </div>
+              <div class="frame-119 border-liner">
+                <h4 className="text-start fw-bolder pt-5 ps-3">
+                  Wave FinLearn
+                </h4>
+                <p
+                  className="text-start fs-5 ps-3"
+                  style={{ color: "#717171" }}
+                >
+                  Lorem Ipsum dolor sit amet, This is <br />
+                  is only dummy text. We will <br />
+                  replace this with real one later.
+                </p>
+                <img
+                  class="f-3-e-1-ffa-2-66-b-9-4-c-98-a-13-e-d-9-ed-9-c-970655"
+                  src={i22}
+                />
+              </div>
+              <div class="frame-115 border-liner">
+                <div class="wave-wallet">Wave Wallet</div>
+                <div class="lorem-ipsum-dolor-sit-amet-this-is-is-only-dummy-text-we-will-replace-this-with-real-one-later2">
+                  Lorem Ipsum dolor sit amet, This is
+                  <br />
+                  is only dummy text. We will
+                  <br />
+                  replace this with real one later.
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="u-card-cont">
-            <div className="card rounded-4 utilities-card-border shadow">
-              <div className="card-body p-4 pb-0">
-                <h4 className="text-start fw-bold">Wave FinLern</h4>
-                <p className="text-start m-0" style={{ color: "#717171" }}>
+              <div class="frame-116 border-liner">
+                <h4 className="text-start fw-bolder pt-5 ps-3">Wave Card</h4>
+
+                <p
+                  className="text-start fs-5 ps-3"
+                  style={{ color: "#717171" }}
+                >
                   Lorem Ipsum dolor sit amet, This is <br />
                   is only dummy text. We will <br />
                   replace this with real one later.
                 </p>
-                <div className="text-end">
-                  <img src={i22} className="img-fluid" alt="Blockchain" />
+
+                <img
+                  class="d-3580698-12-f-6-42-ff-946-d-5-c-3-ec-16-a-5-b-72"
+                  src={i23}
+                />
+              </div>
+              <div class="frame-113 border-liner">
+                <h4 className="text-start fw-bolder pt-5 ps-3">
+                  Wave Micro Tasks App
+                </h4>
+
+                <p
+                  className="text-start fs-5 ps-3"
+                  style={{ color: "#717171" }}
+                >
+                  Lorem Ipsum dolor sit amet, This is <br />
+                  is only dummy text. We will <br />
+                  replace this with real one later.
+                </p>
+              </div>
+              <div class="frame-1152 border-liner">
+                <h4 className="text-start fw-bolder pt-5 ps-3">
+                  Wave Payment Gateway
+                </h4>
+
+                <p
+                  className="text-start fs-5 ps-3"
+                  style={{ color: "#717171" }}
+                >
+                  Lorem Ipsum dolor sit amet, This is <br />
+                  is only dummy text. We will <br />
+                  replace this with real one later.
+                </p>
+              </div>
+              <div class="frame-121 border-liner">
+                <h4 className="text-start fw-bolder pt-5 ps-3">
+                  Wave AI Calling
+                </h4>
+
+                <p
+                  className="text-start fs-5 ps-3"
+                  style={{ color: "#717171" }}
+                >
+                  Lorem Ipsum dolor sit amet, This is <br />
+                  is only dummy text. We will <br />
+                  replace this with real one later.
+                </p>
+              </div>
+              <div class="frame-122 border-liner">
+                <h4 className="text-start fw-bolder pt-5 ps-3">
+                  International Forex
+                </h4>
+
+                <p
+                  className="text-start fs-5 ps-3"
+                  style={{ color: "#717171" }}
+                >
+                  Lorem Ipsum dolor sit amet, This is <br />
+                  is only dummy text. We will <br />
+                  replace this with real one later.
+                </p>
+              </div>
+              <div class="frame-123 border-liner">
+                <div className="">
+                  <h4 className="text-start fw-bolder pt-5 ps-3">
+                    Wave Arbitrage Bot
+                  </h4>
+
+                  <p
+                    className="text-start fs-5 ps-3"
+                    style={{ color: "#717171" }}
+                  >
+                    Lorem Ipsum dolor sit amet, This is <br />
+                    is only dummy text. We will <br />
+                    replace this with real one later.
+                  </p>
                 </div>
+              </div>
+              <div class="frame-114">
+                <h4 className="text-start fw-bolder pt-5 ps-3 text-white">
+                  Wave Crypto Exchange
+                </h4>
+
+                <p className="text-start fs-5 ps-3" style={{ color: "#fff" }}>
+                  Lorem Ipsum dolor sit amet, This is <br />
+                  is only dummy text. We will <br />
+                  replace this with real one later.
+                </p>
+
+                <p class="fw-bold text-white ps-3 text-decoration-underline">
+                  Learn More
+                </p>
+                <img
+                  class="_723-d-9-c-90-c-5-d-8-4-cd-6-9-d-44-51591-eb-8464-e-4"
+                  src={i24}
+                />
               </div>
             </div>
           </div>
-          <div className="u-card-cont">
-            <div className="card rounded-4 utilities-card-border shadow">
-              <div className="card-body p-4 pb-0">
-                <h4 className="text-center fw-bold">Wave NFT Marketplace</h4>
-                <p className="text-center " style={{ color: "#717171" }}>
-                  Lorem Ipsum dolor sit amet, This is <br />
-                  is only dummy text. We will <br />
-                  replace this with real one later.
-                </p>
-                <div className="text-end">
-                  <img src={i20} className="img-fluid" alt="Blockchain" />
+        </div>
+
+        {/* presale part */}
+
+        <div className="container">
+          <div class="presale mt-5">
+            <div class="ellipse-4"></div>
+            <div class="ellipse-5"></div>
+            <img
+              class="group-4 img-fluid z-2"
+              style={{ top: "-1px" }}
+              src={i25}
+            />
+            <img src={i26} className="floating-asset asset26" alt="i1" />
+            <img src={i27} className="floating-asset asset27" alt="i1" />
+            <img src={i28} className="floating-asset asset28" alt="i1" />
+            <img src={i29} className="floating-asset asset29" alt="i1" />
+            <img src={i30} className="floating-asset asset30" alt="i1" />
+            <img src={i31} className="floating-asset asset31" alt="i1" />
+            <img src={i32} className="floating-asset asset32" alt="i1" />
+            <img src={i33} className="floating-asset asset33" alt="i1" />
+            <img src={i34} className="floating-asset asset34" alt="i1" />
+            <img src={i35} className="floating-asset asset35 z-2" alt="i1" />
+            <img src={i38} className="floating-asset asset37" alt="i1" />
+
+            <p className="text-center pt-5 text-primary fw-bold">PRESALE2025</p>
+            <h1 className="text-center fw-bolder g-text">
+              World's First Real World Assets (RWA)
+            </h1>
+            <h1 className="text-center fw-bolder g-text">Backed Presale</h1>
+            <p className="text-center text-secondary">
+              OneWave Presale sets a new benchmark in crypto—backed by
+              real-world assets <br /> like gold, silver, and certified gems for
+              unmatched trust and value.
+            </p>
+            <div className="container-fluid  py-5 mt-5 z-0">
+              <div className="row gx-4 justify-content-center">
+                {/* <!-- Repeat for each presale card --> */}
+                <div className="col-md-6 col-lg-3 mb-4">
+                  <div className="presale-card position-relative bg-white rounded-4 shadow-sm p-3">
+                    <h4 className="fw-bold mb-4">Presale Phase 1</h4>
+                    <hr className="" />
+                    <div className="info-row d-flex py-2">
+                      <span className="label me-auto">Price</span>
+                      <div className="flex-grow-1 mx-2 dor-range"></div>{" "}
+                      {/* dynamic spacer */}
+                      <span className="value">$0.2</span>
+                    </div>
+                    <div className="info-row d-flex py-2">
+                      <span className="label me-auto">Cliff</span>
+                      <div className="flex-grow-1 mx-2 dor-range"></div>{" "}
+                      {/* dynamic spacer */}
+                      <span className="value">12 Months</span>
+                    </div>
+                    <div className="info-row d-flex py-2">
+                      <span className="label me-auto">Vesting</span>
+                      <div className="flex-grow-1 mx-2 dor-range"></div>{" "}
+                      {/* dynamic spacer */}
+                      <span className="value">5% X 20 Months</span>
+                    </div>
+                    <div className="text-center pt-3">
+                      <button
+                        className="btn btn-primary w-100 fw-bold"
+                        onClick={() => navigate("/presale")}
+                      >
+                        Buy Now
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <br />
-          <div className="u-card-cont">
-            <div className="card rounded-4 utilities-card-border shadow">
-              <div className="card-body p-4 pb-0">
-                <h4 className="text-start fw-bold">Wave FinLern</h4>
-                <p className="text-start m-0" style={{ color: "#717171" }}>
-                  Lorem Ipsum dolor sit amet, This is <br />
-                  is only dummy text. We will <br />
-                  replace this with real one later.
-                </p>
-                <div className="text-end">
-                  <img src={i22} className="img-fluid" alt="Blockchain" />
+                <div className="col-md-6 col-lg-3 mb-4">
+                  <div className="presale-card position-relative bg-white rounded-4 shadow-sm p-3">
+                    <h4 className="fw-bold mb-4">Presale Phase 2</h4>
+                    <hr className="" />
+                    <div className="info-row d-flex py-2">
+                      <span className="label me-auto">Price</span>
+                      <div className="flex-grow-1 mx-2 dor-range"></div>{" "}
+                      {/* dynamic spacer */}
+                      <span className="value">$0.4</span>
+                    </div>
+                    <div className="info-row d-flex py-2">
+                      <span className="label me-auto">Cliff</span>
+                      <div className="flex-grow-1 mx-2 dor-range"></div>{" "}
+                      {/* dynamic spacer */}
+                      <span className="value">9 Months</span>
+                    </div>
+                    <div className="info-row d-flex py-2">
+                      <span className="label me-auto">Vesting</span>
+                      <div className="flex-grow-1 mx-2 dor-range"></div>{" "}
+                      {/* dynamic spacer */}
+                      <span className="value">5% X 20 Months</span>
+                    </div>
+                    <div className="text-center pt-3">
+                      <button
+                        className="btn btn-primary w-100 fw-bold"
+                        onClick={() => navigate("/presale")}
+                      >
+                        Buy Now
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-6 col-lg-3 mb-4">
+                  <div className="presale-card position-relative bg-white rounded-4 shadow-sm p-3">
+                    <h4 className="fw-bold mb-4">Presale Phase 3</h4>
+                    <hr className="" />
+                    <div className="info-row d-flex py-2">
+                      <span className="label me-auto">Price</span>
+                      <div className="flex-grow-1 mx-2 dor-range"></div>{" "}
+                      {/* dynamic spacer */}
+                      <span className="value">$0.6</span>
+                    </div>
+                    <div className="info-row d-flex py-2">
+                      <span className="label me-auto">Cliff</span>
+                      <div className="flex-grow-1 mx-2 dor-range"></div>{" "}
+                      {/* dynamic spacer */}
+                      <span className="value">6 Months</span>
+                    </div>
+                    <div className="info-row d-flex py-2">
+                      <span className="label me-auto">Vesting</span>
+                      <div className="flex-grow-1 mx-2 dor-range"></div>{" "}
+                      {/* dynamic spacer */}
+                      <span className="value">5% X 20 Months</span>
+                    </div>
+                    <div className="text-center pt-3">
+                      <button
+                        className="btn btn-primary w-100 fw-bold"
+                        onClick={() => navigate("/presale")}
+                      >
+                        Buy Now
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-6 col-lg-3 mb-4">
+                  <div className="presale-card position-relative bg-white rounded-4 shadow-sm p-3">
+                    <h4 className="fw-bold mb-4">Presale Phase 4</h4>
+                    <hr className="" />
+                    <div className="info-row d-flex py-2">
+                      <span className="label me-auto">Price</span>
+                      <div className="flex-grow-1 mx-2 dor-range"></div>{" "}
+                      {/* dynamic spacer */}
+                      <span className="value">$0.8</span>
+                    </div>
+                    <div className="info-row d-flex py-2">
+                      <span className="label me-auto">Cliff</span>
+                      <div className="flex-grow-1 mx-2 dor-range"></div>{" "}
+                      {/* dynamic spacer */}
+                      <span className="value">3 Months</span>
+                    </div>
+                    <div className="info-row d-flex py-2">
+                      <span className="label me-auto">Vesting</span>
+                      <div className="flex-grow-1 mx-2 dor-range"></div>{" "}
+                      {/* dynamic spacer */}
+                      <span className="value">5% X 20 Months</span>
+                    </div>
+                    <div className="text-center pt-3">
+                      <button
+                        className="btn btn-primary w-100 fw-bold"
+                        onClick={() => navigate("/presale")}
+                      >
+                        Buy Now
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="utilities-grid">
-  <div class="utility-card" style={{height:"600px"}}>Wave Blockchain</div>
-  <div class="utility-card">Wave Staking</div>
-  <div class="utility-card">Wave FinLearn</div>
-  <div class="utility-card">Wave NFT Marketplace</div>
-  <div class="utility-card wide-card">Wave Crypto Exchange</div>
-  <div class="utility-card">Wave Micro Tasks App</div>
-  <div class="utility-card">Crypto Gaming</div>
-  
+        {/* chart */}
+        <div className="container pt-5">
+          <p className="text-center pt-5 text-primary fw-bold">TOKENOMICS</p>
+          <h1 className="text-center fw-bolder g-text">
+            Fueling the Ecosystem
+          </h1>
+          <p className="text-center text-secondary">
+            The Wave Token (WAVE) is the backbone of our ecosystem, designed to
+            power transactions, rewards, <br />
+            and governance acrossthe platform.
+          </p>
+          <div className="row">
+            <div className="col12">
+              <HighchartsReact highcharts={Highcharts} options={options} />
+            </div>
+          </div>
+        </div>
 
-
-  <div class="utility-card">Wave Wallet</div>
- 
-  <div class="utility-card">Wave Card</div>
-  <div class="utility-card">Wave Payment Gateway</div>
-  
-  <div class="utility-card">Wave AI Calling</div>
-  <div class="utility-card">International Forex</div>
-  <div class="utility-card">Wave Arbitrage Bot</div>
-</div>
-
+        {/* team */}
+        <div className="container py-5">
+          <p className="text-center pt-5 text-primary fw-bold">OUR TEAM</p>
+          <h1 className="text-center fw-bolder g-text">
+            Meet the experts behind Wave's success
+          </h1>
+          <div className="d-flex justify-content-center align-items-start gap-3">
+            <div style={{ width: "20%", maxWidth: "100%" }}>
+              <div className="card shadow-none border-0">
+                <div className="card-body">
+                  <div className="text-center">
+                    <img src={i39} className=" rounded-circle" alt="" />
+                  </div>
+                  <h5 className="text-center">
+                    Mr.Mohmmad abd al azez Mahmod (ORWA)
+                  </h5>
+                  <p className="text-center text-secondary">
+                    Co-Founder & CEO (Turkey)
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div style={{ width: "20%", maxWidth: "100%" }}>
+              <div className="card shadow-none border-0">
+                <div className="card-body">
+                  <div className="text-center">
+                    <img
+                      src={i40}
+                      className="rounded-circle"
+                      alt=""
+                      style={{ width: "150px" }}
+                    />
+                  </div>
+                  <h5 className="text-center">Mr. Vishwa Badal</h5>
+                  <p className="text-center text-secondary">
+                    Co-Founder & COO (India)
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div style={{ width: "20%", maxWidth: "100%" }}>
+              <div className="card shadow-none border-0">
+                <div className="card-body">
+                  <div className="text-center">
+                    <img
+                      src={i41}
+                      className="rounded-circle"
+                      alt=""
+                      style={{ width: "150px" }}
+                    />
+                  </div>
+                  <h5 className="text-center">Mr. Tridib Nandy</h5>
+                  <p className="text-center text-secondary">
+                    Social Advisor (United States)
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div style={{ width: "20%", maxWidth: "100%" }}>
+              <div className="card shadow-none border-0">
+                <div className="card-body">
+                  <div className="text-center">
+                    <img
+                      src={i42}
+                      className="rounded-circle"
+                      alt=""
+                      style={{ width: "150px" }}
+                    />
+                  </div>
+                  <h5 className="text-center">Mr. Arvind Kumar</h5>
+                  <p className="text-center text-secondary">
+                    Chief Technical Advisor (Hong Kong)
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div style={{ width: "20%", maxWidth: "100%" }}>
+              <div className="card shadow-none border-0">
+                <div className="card-body">
+                  <div className="text-center">
+                    <img
+                      src={i43}
+                      className="rounded-circle"
+                      alt=""
+                      style={{ width: "150px" }}
+                    />
+                  </div>
+                  <h5 className="text-center">Mr. Victor Diakov</h5>
+                  <p className="text-center text-secondary">
+                    Regional Advisor - CIS Countries (Russia)
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
