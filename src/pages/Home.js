@@ -44,17 +44,53 @@ import i37 from "../assets/images/bluejems.png";
 import i38 from "../assets/images/bluestone.png";
 import { useNavigate } from "react-router-dom";
 
-import Highcharts from "highcharts";
-import HighchartsReact from "highcharts-react-official";
-
 import i39 from "../assets/images/Team1.png";
 import i40 from "../assets/images/Team2.png";
 import i41 from "../assets/images/Team3.png";
 import i42 from "../assets/images/Team4.png";
 import i43 from "../assets/images/Team5.png";
+import PieChart from "../components/PieChart";
+
+import i44 from "../assets/images/Group1.svg";
+import i45 from "../assets/images/Group2.svg";
+
+import i46 from "../assets/images/binance.svg";
+import i47 from "../assets/images/ethereum.svg";
+import i48 from "../assets/images/polygon.svg";
+import i49 from "../assets/images/lycan.svg";
+import SlideInAnime from "../components/SlideInAnime";
+
+import i50 from "../assets/images/Frame-107.png";
+import i51 from "../assets/images/Frame-108.png";
+import Footer from "../components/Footer";
+import WaveSubscription from "../components/WaveSubscription";
+import { Carousel } from "react-bootstrap";
+
+import i52 from "../assets/images/news1.png";
+import i53 from "../assets/images/news2.png";
+import i54 from "../assets/images/news3.png";
+import i55 from "../assets/images/news4.png";
+import i56 from "../assets/images/news5.png";
+import i57 from "../assets/images/news6.png";
+import i58 from "../assets/images/news7.png";
+import i59 from "../assets/images/news8.png";
+import i60 from "../assets/images/news9.png";
+import i61 from "../assets/images/news10.png";
+import i62 from "../assets/images/news11.png";
+import i63 from "../assets/images/news12.png";
+import i64 from "../assets/images/news13.png";
+import i65 from "../assets/images/news14.png";
+import i66 from "../assets/images/news15.png";
+import i67 from "../assets/images/news16.png";
+import i68 from "../assets/images/news17.png";
+import i69 from "../assets/images/news18.png";
+import i70 from "../assets/images/news19.png";
+import i71 from "../assets/images/news20.png";
+import i72 from "../assets/images/news21.png";
 
 const Home = () => {
   const navigate = useNavigate();
+
   const partners = [
     // { id: 1, name: 'Angel', image: 'angel-logo-light0.png', width: 200 },
     // { id: 2, name: 'Bitgert', image: 'bitgert0.png', width: 200 },
@@ -69,91 +105,6 @@ const Home = () => {
     //   { id: 11, name: 'Partner 11', image: 'partner-110.png', width: 100 },
     //   { id: 12, name: 'Partner 12', image: 'partner-120.png', width: 100 },
   ];
-
-  const options = {
-    chart: {
-      type: "pie",
-    },
-    title: {
-      text: "",
-    },
-    tooltip: {
-      valueSuffix: "%",
-    },
-    // subtitle: {
-    //     text:
-    //     'Source:<a href="https://www.mdpi.com/2072-6643/11/3/684/htm" target="_default">MDPI</a>'
-    // },
-    plotOptions: {
-      pie: {
-        allowPointSelect: true,
-        cursor: "pointer",
-        dataLabels: [
-          {
-            enabled: true,
-            distance: 20,
-          },
-          {
-            enabled: true,
-            distance: -40,
-            format: "{point.percentage:.1f}%",
-            style: {
-              // fontSize: "1.2em",
-              textOutline: "none",
-              opacity: 0.7,
-            },
-            filter: {
-              operator: ">",
-              property: "percentage",
-              value: 1,
-            },
-          },
-        ],
-      },
-    },
-    series: [
-      {
-        name: "Percentage",
-        colorByPoint: true,
-        data: [
-          {
-            name: "Pre-sale & Fairsale",
-            y: 23,
-          },
-          {
-            name: "Staking Rewards",
-            // sliced: true,
-            // selected: true,
-            y: 15,
-          },
-          {
-            name: "Team",
-            y: 8,
-          },
-          {
-            name: "Advisors",
-            y: 5,
-          },
-          {
-            name: "Marketing",
-            y: 12,
-          },
-          {
-            name: "Airdrop",
-            y: 4,
-          },
-          {
-            name: "Ecosystem Devlopment",
-            y: 17,
-          },
-          {
-            name: "Liquidity",
-            y: 16,
-          },
-        ],
-      },
-    ],
-  };
 
   const PresaleCard = ({ phase, price, cliff, vesting }) => {
     return (
@@ -198,13 +149,19 @@ const Home = () => {
               </div>
               <p className="m-0 ps-3">Join the revolution now 🔥</p>
             </div>
-            <h1 className="fw-bold g-text text-center text-md-start pt-4">
+            <h1
+              className="fw-bold g-text text-center text-md-start pt-4 big-font"
+            >
               Onewave The Multi-Chain
             </h1>
-            <h1 className="fw-bold g-text text-center text-md-start">
+            <h1
+              className="fw-bold g-text text-center text-md-start big-font"
+            >
               Multi-Utility Platform
             </h1>
-            <h1 className="fw-bold g-text text-center text-md-start">
+            <h1
+              className="fw-bold g-text text-center text-md-start big-font"
+            >
               For The Wab-3 World
             </h1>
 
@@ -233,86 +190,89 @@ const Home = () => {
         </div>
 
         {/*  community */}
+
         <div className="community">
           <div className="community2">
-            <div className="frame-44">
-              {/* Join the community section */}
-              <div className="frame-34">
-                <h2 className="section-heading">Join the community</h2>
-                <div className="frame-33">
-                  <div className="icon-box black-box">
-                    <img src={i1} alt="Community icon 1" />
-                  </div>
-                  <div className="icon-box blue-box">
-                    <img src={i2} alt="Community icon 2" />
-                  </div>
-                  <div className="icon-box">
-                    <img
-                      src={i3}
-                      alt="Community icon 3"
-                      className="mw-100 p-0 mh-100"
-                    />
-                  </div>
-                  <div className="icon-box ">
-                    <img
-                      src={i3}
-                      alt="Community icon 1"
-                      className="mw-100 p-0 mh-100"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* We are listed on section */}
-              <div className="frame-42">
-                <h2 className="section-heading">We are listed on</h2>
-                <div className="frame-41">
-                  <div className="logo-row">
-                    <div className="logo-box logo-box-lg">
-                      <img src={i4} alt="Listing 1" />
+            <div className="container p-0">
+              <div className="frame-44">
+                {/* Join the community section */}
+                <div className="frame-34">
+                  <h2 className="section-heading">Join the community</h2>
+                  <div className="frame-33">
+                    <div className="icon-box black-box">
+                      <img src={i1} alt="Community icon 1" />
                     </div>
-                    <div className="logo-box logo-box-lg">
-                      <img src={i5} alt="Listing 2" />
+                    <div className="icon-box blue-box">
+                      <img src={i2} alt="Community icon 2" />
                     </div>
-                    <div className="logo-box logo-box-lg">
-                      <img src={i6} alt="Listing 3" />
+                    <div className="icon-box">
+                      <img
+                        src={i3}
+                        alt="Community icon 3"
+                        className="mw-100 p-0 mh-100"
+                      />
                     </div>
-                  </div>
-                  <div className="logo-row">
-                    <div className="logo-box logo-box-md">
-                      <img src={i7} alt="Listing 4" />
-                    </div>
-                    <div className="logo-box logo-box-sm">
-                      <img src={i8} alt="Listing 5" />
-                    </div>
-                    <div className="logo-box logo-box-xl">
-                      <img src={i9} alt="Listing 6" />
-                    </div>
-                    <div className="logo-box logo-box-lg">
-                      <img src={i10} alt="Listing 7" />
+                    <div className="icon-box ">
+                      <img
+                        src={i3}
+                        alt="Community icon 1"
+                        className="mw-100 p-0 mh-100"
+                      />
                     </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Audited By section */}
-              <div className="frame-43">
-                <h2 className="section-heading">Audited By</h2>
-                <div className="frame-41">
-                  <div className="logo-row">
-                    <div className="logo-box logo-box-lg">
-                      <img src={i5} alt="Auditor 1" />
+                {/* We are listed on section */}
+                <div className="frame-42">
+                  <h2 className="section-heading">We are listed on</h2>
+                  <div className="frame-41">
+                    <div className="logo-row">
+                      <div className="logo-box logo-box-lg">
+                        <img src={i4} alt="Listing 1" />
+                      </div>
+                      <div className="logo-box logo-box-lg">
+                        <img src={i5} alt="Listing 2" />
+                      </div>
+                      <div className="logo-box logo-box-lg">
+                        <img src={i6} alt="Listing 3" />
+                      </div>
                     </div>
-                    <div className="logo-box logo-box-lg">
-                      <img src={i6} alt="Auditor 2" />
+                    <div className="logo-row">
+                      <div className="logo-box logo-box-md">
+                        <img src={i7} alt="Listing 4" />
+                      </div>
+                      <div className="logo-box logo-box-sm">
+                        <img src={i8} alt="Listing 5" />
+                      </div>
+                      <div className="logo-box logo-box-xl">
+                        <img src={i9} alt="Listing 6" />
+                      </div>
+                      <div className="logo-box logo-box-lg">
+                        <img src={i10} alt="Listing 7" />
+                      </div>
                     </div>
                   </div>
-                  <div className="logo-row">
-                    <div className="logo-box logo-box-lg">
-                      <img src={i7} alt="Auditor 3" />
+                </div>
+
+                {/* Audited By section */}
+                <div className="frame-43">
+                  <h2 className="section-heading">Audited By</h2>
+                  <div className="frame-41">
+                    <div className="logo-row">
+                      <div className="logo-box logo-box-lg">
+                        <img src={i5} alt="Auditor 1" />
+                      </div>
+                      <div className="logo-box logo-box-lg">
+                        <img src={i6} alt="Auditor 2" />
+                      </div>
                     </div>
-                    <div className="logo-box logo-box-lg">
-                      <img src={i9} alt="Auditor 4" />
+                    <div className="logo-row">
+                      <div className="logo-box logo-box-lg">
+                        <img src={i7} alt="Auditor 3" />
+                      </div>
+                      <div className="logo-box logo-box-lg">
+                        <img src={i9} alt="Auditor 4" />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -377,18 +337,20 @@ const Home = () => {
         <div className="partners">
           <div className="partners__container">
             <h2 className="partners__title">Our Partners</h2>
-            <div className="partners__grid">
-              {partners.map((partner) => (
-                <div key={partner.id} className="partners__item">
-                  <img
-                    src={partner.image}
-                    alt={partner.name}
-                    className="partners__logo"
-                    style={{ maxWidth: `${partner.width}px` }}
-                  />
-                </div>
-              ))}
-            </div>
+            <marquee direction="left">
+              <div className="partners__grid">
+                {partners.map((partner) => (
+                  <div key={partner.id} className="partners__item">
+                    <img
+                      src={partner.image}
+                      alt={partner.name}
+                      className="partners__logo"
+                      style={{ maxWidth: `${partner.width}px` }}
+                    />
+                  </div>
+                ))}
+              </div>
+            </marquee>
           </div>
           <img className="frame-102" src={f101} alt="Bottom frame" />
         </div>
@@ -782,10 +744,185 @@ const Home = () => {
             power transactions, rewards, <br />
             and governance acrossthe platform.
           </p>
-          <div className="row">
-            <div className="col12">
-              <HighchartsReact highcharts={Highcharts} options={options} />
+          <div className="row pt-5">
+            <div className="col-12 position-relative">
+              <PieChart />
+              <div className="position-absolute grop-1">
+                <img src={i44} className="img-fluid" alt="" />
+              </div>
+              <div className="position-absolute grop-2">
+                <img src={i45} className="img-fluid" alt="" />
+              </div>
+
+              <div className="position-absolute grop-3">
+                <div class="frame-1597880379">
+                  <div class="frame-68">
+                    <div class="rectangle-6"></div>
+                    <div class="rectangle-1611238367"></div>
+                    <div class="frame-75">
+                      <div class="binance-smart-chain">Binance Smart Chain</div>
+                      <div class="_25">25%</div>
+                    </div>
+
+                    <div class="frame-72">
+                      <img class="binance-svgrepo-com-1" src={i46} />
+                    </div>
+                  </div>
+                  <div class="frame-69">
+                    <div class="rectangle-7"></div>
+                    <div class="rectangle-16112383627"></div>
+                    <div class="frame-73">
+                      <div class="eth-svgrepo-com-1">
+                        <img class="group" src={i47} />
+                      </div>
+                    </div>
+                    <div class="frame-74">
+                      <div class="_252">25%</div>
+                      <div class="ethereum">Ethereum</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="position-absolute grop-4">
+                <div class="frame-1597880378">
+                  <div class="frame-70">
+                    <div class="rectangle-4"></div>
+                    <div class="rectangle-161123836"></div>
+                    <div class="frame-77">
+                      <div class="polygon-network">Polygon Network</div>
+                      <div class="_25">25%</div>
+                    </div>
+                    <div class="frame-78">
+                      <img class="polygon-matic-logo-1" src={i48} />
+                    </div>
+                  </div>
+                  <div class="frame-71">
+                    <div class="rectangle-5"></div>
+                    <div class="rectangle-1611238362"></div>
+                    <div class="frame-76">
+                      <div class="_252">25%</div>
+                      <div class="lycan-chain">Lycan Chain</div>
+                    </div>
+                    <img class="_32568-1" src={i49} />
+                  </div>
+                </div>
+              </div>
+
+              <div className="position-absolute grop-5 w-100">
+                <div className="d-flex justify-content-between align-items-start">
+                  <div className="d-flex">
+                    <img class="binance-svgrepo-com-1" src={i46} />
+                    <div class="frame-1597880458">
+                      <div class="binance-smart-chain5">
+                        Binance Smart Chain
+                      </div>
+                      <div class="_255">25%</div>
+                    </div>
+                  </div>
+                  <div className="d-flex">
+                    <div class="frame-1597880459">
+                      <div class="ethereum25">Ethereum</div>
+                      <div class="_2525">25%</div>
+                    </div>
+                    <img
+                      class="group position-relative top-0 start-0 end-0 bottom-0"
+                      src={i47}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="grop-6 w-100">
+                <div className="d-flex justify-content-between align-items-start">
+                  <div className="d-flex">
+                    <img class="binance-svgrepo-com-1 me-1" src={i48} />
+                    <div class="frame-1597880458">
+                      <div class="polygon-network35">Polygon Network</div>
+                      <div class="_2535">25%</div>
+                    </div>
+                  </div>
+                  <div className="d-flex">
+                    <div class="frame-1597880459">
+                      <div class="lycan-chain45">Lycan Chain</div>
+                      <div class="_2545">25%</div>
+                    </div>
+                    <img
+                      class="group position-relative top-0 start-0 end-0 bottom-0"
+                      src={i49}
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+
+        {/* q1 q2 */}
+
+        <div className="container pt-5 mt-5">
+          <div class="roadmap">
+            <div class="frame-86">
+              <p className="text-center pt-5 text-primary fw-bold">ROADMAP</p>
+              <h1 className="text-center fw-bolder g-text">
+                Milestones And Future Plans
+              </h1>
+              <div class="ellipse-7"></div>
+              <div class="ellipse-6"></div>
+              <div class="frame-108">
+                <div class="frame-97">
+                  <div class="frame-96">
+                    <div class="q-1-2025">Q1 - 2025</div>
+                    <div class="launch-of-the-one-wave-platform-community-airdrop-through-tap-to-earn-games-presale-staking-launch-for-the-wave-token-introduction-of-rwa-backed-presale-and-staking-release-of-the-wave-wallet-app-for-easy-crypto-management">
+                      - Launch of the OneWave Platform
+                      <br />
+                      - Community Airdrop through tap-to-earn games.
+                      <br />
+                      - Presale &amp; Staking launch for the WAVE token.
+                      <br />
+                      - Introduction of RWA backed Presale and Staking
+                      <br />- Release of the Wave Wallet App for easy crypto
+                      management.
+                    </div>
+                    <div class="rectangle-8"></div>
+                  </div>
+                  <img class="line-1" src="line-10.svg" />
+                </div>
+                <div class="frame-98">
+                  <div class="q-2-2025">Q2 - 2025</div>
+                  <div class="listing-on-tracking-sites-like-coin-market-cap-cmc-and-coin-gecko-cg-listing-on-launchpads-for-wider-accessibility-integration-of-crypto-gaming-utilities-for-play-to-earn-and-tap-to-earn-launch-of-the-wave-crypto-card-for-seamless-spending-introduction-of-the-crypto-payment-gateway-for-businesses-listing-on-multiple-reputed-crypto-exchanges-for-liquidity">
+                    - Listing on Tracking Sites like CoinMarketCap (CMC) and
+                    CoinGecko (CG).
+                    <br />
+                    - Listing on Launchpads for wider accessibility.
+                    <br />
+                    - Integration of Crypto Gaming Utilities for play-to-earn
+                    and tap-to-earn.
+                    <br />
+                    - Launch of the Wave Crypto Card for seamless spending.
+                    <br />
+                    - Introduction of the Crypto Payment Gateway for businesses.
+                    <br />- Listing on Multiple Reputed Crypto Exchanges for
+                    liquidity.
+                  </div>
+                  <img class="line-2" src="line-20.svg" />
+                </div>
+                <div class="frame-99">
+                  <div class="q-3-2025">Q3 - 2025</div>
+                  <div class="arbitrage-bot-utility-through-a-subscription-model-launch-of-the-traditional-staking-platform-for-passive-income-introduction-of-the-nft-marketplace-for-digital-asset-trading">
+                    - Arbitrage Bot Utility through a subscription model.
+                    <br />
+                    - Launch of the Traditional Staking Platform for passive
+                    income.
+                    <br />- Introduction of the NFT Marketplace for digital
+                    asset trading.
+                  </div>
+                  <img class="line-22" src="line-21.svg" />
+                </div>
+              </div>
+            </div>
+            <img class="frame-107" src={i50} />
+            <img class="group-5 img-fluid" src={i51} />
           </div>
         </div>
 
@@ -795,7 +932,7 @@ const Home = () => {
           <h1 className="text-center fw-bolder g-text">
             Meet the experts behind Wave's success
           </h1>
-          <div className="d-flex justify-content-center align-items-start gap-3">
+          <div className="d-none d-md-flex justify-content-center align-items-start gap-3">
             <div style={{ width: "20%", maxWidth: "100%" }}>
               <div className="card shadow-none border-0">
                 <div className="card-body">
@@ -884,7 +1021,210 @@ const Home = () => {
               </div>
             </div>
           </div>
+          <div className="d-md-none d-grid pt-5">
+            <Carousel className="">
+              <Carousel.Item>
+                <div className="card shadow-none border-0">
+                  <div className="card-body">
+                    <div className="text-center">
+                      <img src={i39} className=" rounded-circle" alt="" />
+                    </div>
+                    <h5 className="text-center">
+                      Mr.Mohmmad abd al azez Mahmod (ORWA)
+                    </h5>
+                    <p className="text-center text-secondary">
+                      Co-Founder & CEO (Turkey)
+                    </p>
+                  </div>
+                </div>
+              </Carousel.Item>
+              <Carousel.Item>
+                <div className="card shadow-none border-0">
+                  <div className="card-body">
+                    <div className="text-center">
+                      <img
+                        src={i40}
+                        className="rounded-circle"
+                        alt=""
+                        style={{ width: "150px" }}
+                      />
+                    </div>
+                    <h5 className="text-center">Mr. Vishwa Badal</h5>
+                    <p className="text-center text-secondary">
+                      Co-Founder & COO (India)
+                    </p>
+                  </div>
+                </div>
+              </Carousel.Item>
+              <Carousel.Item>
+                <div className="card shadow-none border-0">
+                  <div className="card-body">
+                    <div className="text-center">
+                      <img
+                        src={i41}
+                        className="rounded-circle"
+                        alt=""
+                        style={{ width: "150px" }}
+                      />
+                    </div>
+                    <h5 className="text-center">Mr. Tridib Nandy</h5>
+                    <p className="text-center text-secondary">
+                      Social Advisor (United States)
+                    </p>
+                  </div>
+                </div>
+              </Carousel.Item>
+              <Carousel.Item>
+                <div className="card shadow-none border-0">
+                  <div className="card-body">
+                    <div className="text-center">
+                      <img
+                        src={i42}
+                        className="rounded-circle"
+                        alt=""
+                        style={{ width: "150px" }}
+                      />
+                    </div>
+                    <h5 className="text-center">Mr. Arvind Kumar</h5>
+                    <p className="text-center text-secondary">
+                      Chief Technical Advisor (Hong Kong)
+                    </p>
+                  </div>
+                </div>
+              </Carousel.Item>
+              <Carousel.Item>
+                <div className="card shadow-none border-0">
+                  <div className="card-body">
+                    <div className="text-center">
+                      <img
+                        src={i43}
+                        className="rounded-circle"
+                        alt=""
+                        style={{ width: "150px" }}
+                      />
+                    </div>
+                    <h5 className="text-center">Mr. Victor Diakov</h5>
+                    <p className="text-center text-secondary">
+                      Regional Advisor - CIS Countries (Russia)
+                    </p>
+                  </div>
+                </div>
+              </Carousel.Item>
+            </Carousel>
+          </div>
         </div>
+
+        {/* news */}
+        <div className="container py-5">
+          <p className="text-center pt-5 text-primary fw-bold">
+            NEWS AND MEDIA
+          </p>
+          <h1 className="text-center fw-bolder g-text">
+            Featured by Top Publications Around the World
+          </h1>
+          <div class="featured-in shadow-none">
+            <div class="frame-1597880383 shadow-none" >
+              <div class="frame-41 shadow-none" >
+                <div class="frame-39 shadow-none">
+                  <div class="frame-27">
+                    <img class="image-8" src={i52} />
+                  </div>
+                  <div class="frame-412">
+                    <img class="image" src={i53} />
+                  </div>
+                  <div class="frame-28">
+                    <img class="image2" src={i54} />
+                  </div>
+                  <div class="frame-35">
+                    <img class="image3" src={i55} />
+                  </div>
+                  <div class="frame-36">
+                    <img class="image4" src={i56} />
+                  </div>
+                  <div class="frame-37">
+                    <img class="image-10" src={i57} />
+                  </div>
+                  <div class="frame-38">
+                    <img class="image5" src={i58} />
+                  </div>
+                  <div class="frame-392">
+                    <img class="image6" src={i59} />
+                  </div>
+                  <div class="frame-40">
+                    <img class="image3" src={i60} />
+                  </div>
+                </div>
+                <div class="frame-402">
+                  <div class="frame-362">
+                    <img class="frame" src={i61} />
+                  </div>
+                  <div class="frame-393">
+                    <div class="frame2">
+                      <img class="frame-45" src={i62} />
+                    </div>
+                  </div>
+                  <div class="frame-372">
+                    <img class="frame3" src={i63} />
+                  </div>
+                  <div class="frame-38">
+                    <img class="frame4" src={i64} />
+                  </div>
+                  <div class="frame-40">
+                    <img class="image-31" src={i65} />
+                  </div>
+                  <div class="frame-452">
+                    <img class="image7" src={i66} />
+                  </div>
+                  <div class="frame-46">
+                    <img class="image7" src={i67} />
+                  </div>
+                  <div class="frame-47">
+                    <img class="image7" src={i68} />
+                  </div>
+                  <div class="frame-48">
+                    <img class="image7" src={i69} />
+                  </div>
+                  <div class="frame-49">
+                    <img class="image-31" src={i70} />
+                  </div>
+                </div>
+                <div class="frame-413">
+                  <div class="frame-27">
+                    <img class="image-8" src={i71} />
+                  </div>
+                  <div class="frame-412">
+                    <img class="image8" src={i72} />
+                  </div>
+                  <div class="frame-28">
+                    <img class="image-9" src={i60} />
+                  </div>
+                  <div class="frame-35">
+                    <img class="image9" src={i70} />
+                  </div>
+                  <div class="frame-36">
+                    <img class="image-10" src={i59} />
+                  </div>
+                  <div class="frame-37">
+                    <img class="image6" src={i72} />
+                  </div>
+                  <div class="frame-38">
+                    <img class="image3" src={i71} />
+                  </div>
+                  <div class="frame-392">
+                    <img class="image-10" src={i72} />
+                  </div>
+                  <div class="frame-40">
+                    <img class="image-10" src={i72} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* footer */}
+        <WaveSubscription />
+        <Footer />
       </div>
     </>
   );

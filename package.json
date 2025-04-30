@@ -11,6 +11,7 @@
     "@tanstack/react-query": "^5.21.0",
     "@walletconnect/core": "^2.20.0",
     "@walletconnect/utils": "^2.20.0",
+    "animejs": "^4.0.2",
     "axios": "^1.8.4",
     "bootstrap": "^5.3.5",
     "country-codes-list": "^2.0.0",
