@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Topnav2 from "../components/Topnav2";
 import Spline from "@splinetool/react-spline";
 
@@ -88,8 +88,19 @@ import i70 from "../assets/images/news19.png";
 import i71 from "../assets/images/news20.png";
 import i72 from "../assets/images/news21.png";
 
+import { motion, useTransform, useScroll } from "framer-motion";
+
+import TopLink from '../components/TopLink'
+
 const Home = () => {
   const navigate = useNavigate();
+
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
 
   const partners = [
     // { id: 1, name: 'Angel', image: 'angel-logo-light0.png', width: 200 },
@@ -139,47 +150,42 @@ const Home = () => {
 
   return (
     <>
+    <TopLink />
       <div className="container-fluid px-0">
         <Topnav2 />
         <div className="position-relative">
           <div className="position-absolute hero-text">
-            <div className="custom-border rounded-pill w-auto d-flex align-items-center p-2 w-75 mx-auto mx-md-0 w-md-50">
+            <div className="custom-border rounded-pill d-flex align-items-center py-2 w-75 w-md-25 mx-auto mx-md-0 ">
               <div className="ms-3 badge rounded-pill text-bg-primary text-white">
                 New
               </div>
               <p className="m-0 ps-3">Join the revolution now 🔥</p>
             </div>
-            <h1
-              className="fw-bold g-text text-center text-md-start pt-4 big-font"
-            >
+            <h1 className="fw-bold g-text text-center text-md-start pt-4 big-font">
               Onewave The Multi-Chain
             </h1>
-            <h1
-              className="fw-bold g-text text-center text-md-start big-font"
-            >
+            <h1 className="fw-bold g-text text-center text-md-start big-font">
               Multi-Utility Platform
             </h1>
-            <h1
-              className="fw-bold g-text text-center text-md-start big-font"
-            >
+            <h1 className="fw-bold g-text text-center text-md-start big-font">
               For The Wab-3 World
             </h1>
 
             <p
-              className=" text-center text-md-start"
-              style={{ color: "#4d4d4d" }}
+              className="pt-4 m-0 text-center text-md-start"
+              style={{ color: "#4d4d4d", fontSize:"1.1rem",fontWeight:"500"}}
             >
               Cutting-edge multichain, multi-utility cryptocurrency platform
               designed to provide <br /> users with a comprehensive suite of
               blockchain-based tools and services.
             </p>
 
-            <div className="d-flex gap-3">
-              <button className="btn btn-primary px-5 py-3">
-                <i className="fa-solid fa-cart-shopping"></i> Presale
+            <div className="d-flex gap-3 pt-4">
+              <button className="btn btn-primary px-5 py-3 " style={{fontSize:"1.2rem", fontWeight:"500"}}>
+                <i className="fa-solid fa-cart-shopping me-2"></i> Presale
               </button>
-              <button className="btn btn-light  px-5 py-3">
-                <i class="fa-solid fa-boxes-stacked"></i> Staking
+              <button className="btn btn-light  px-5 py-3" style={{fontSize:"1.2rem", fontWeight:"500"}}>
+                <i class="fa-solid fa-boxes-stacked me-2"></i> Staking
               </button>
             </div>
           </div>
@@ -287,7 +293,7 @@ const Home = () => {
           <div className="welcome">
             <div className="welcome__image-container">
               <Spline
-                className=" welcome__image spline"
+                className=" welcome__imag spline"
                 scene="https://prod.spline.design/ly81-lwJthVkC4ml/scene.splinecode"
               />
               {/* <img
@@ -337,33 +343,57 @@ const Home = () => {
         <div className="partners">
           <div className="partners__container">
             <h2 className="partners__title">Our Partners</h2>
-            <marquee direction="left">
-              <div className="partners__grid">
-                {partners.map((partner) => (
-                  <div key={partner.id} className="partners__item">
-                    <img
-                      src={partner.image}
-                      alt={partner.name}
-                      className="partners__logo"
-                      style={{ maxWidth: `${partner.width}px` }}
-                    />
-                  </div>
-                ))}
-              </div>
-            </marquee>
+            <div className="d-flex">
+              <motion.div
+                initial={{ x: "0" }}
+                animate={{ x: "-100%" }}
+                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                className="flex-shrink-0"
+              >
+                <div className="partners__grid">
+                  {partners.map((partner) => (
+                    <div key={partner.id} className="partners__item">
+                      <img
+                        src={partner.image}
+                        alt={partner.name}
+                        className="partners__logo"
+                        style={{ maxWidth: `${partner.width}px` }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+              <motion.div
+                initial={{ x: "0" }}
+                animate={{ x: "-100%" }}
+                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                className="flex-shrink-0"
+              >
+                <div className="partners__grid">
+                  {partners.map((partner) => (
+                    <div key={partner.id} className="partners__item">
+                      <img
+                        src={partner.image}
+                        alt={partner.name}
+                        className="partners__logo"
+                        style={{ maxWidth: `${partner.width}px` }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
           </div>
           <img className="frame-102" src={f101} alt="Bottom frame" />
         </div>
 
         {/* utilities */}
         <div className="pt-5">
-          <p className="text-center text-primary fw-bold">UTILITIES</p>
-          <h1 className="fw-bold g-text text-center">
+          <p className="text-center text-primary fw-semibold" style={{fontSize:"1.1rem"}}>UTILITIES</p>
+          <h1 className="fw-bold g-text text-center mb-5">
             OneWave’s Innovative Utilities
           </h1>
         </div>
-        {/* test */}
-
         <div className="container">
           <div class="frame-135">
             <div class="frame-134 w-100">
@@ -371,7 +401,7 @@ const Home = () => {
                 <h4 className="text-center fw-bolder pt-5">Wave Blockchain</h4>
                 {/* <div class="wave-blockchain"></div> */}
 
-                <p className="text-center fs-5" style={{ color: "#717171" }}>
+                <p className="text-center" style={{ color: "#717171",fontSize:"1rem", fontWeight:"500" }}>
                   Lorem Ipsum dolor sit amet, This is <br />
                   is only dummy text. We will <br />
                   replace this with real one later.
@@ -384,7 +414,7 @@ const Home = () => {
               <div class="frame-118 border-liner">
                 <h4 className="text-center fw-bolder pt-5">Crypto Gaming</h4>
 
-                <p className="text-center fs-5" style={{ color: "#717171" }}>
+                <p className="text-center" style={{ color: "#717171",fontSize:"1rem", fontWeight:"500" }}>
                   Lorem Ipsum dolor sit amet, This is <br />
                   is only dummy text. We will <br />
                   replace this with real one later.
@@ -399,7 +429,7 @@ const Home = () => {
                   Wave NFT Marketplace
                 </h4>
 
-                <p className="text-center fs-5" style={{ color: "#717171" }}>
+                <p className="text-center" style={{ color: "#717171",fontSize:"1rem", fontWeight:"500" }}>
                   Lorem Ipsum dolor sit amet, This is <br />
                   is only dummy text. We will <br />
                   replace this with real one later.
@@ -413,8 +443,8 @@ const Home = () => {
               <div class="frame-110 border-liner">
                 <h4 className="text-start fw-bolder pt-5 ps-3">Wave Staking</h4>
                 <p
-                  className="text-start fs-5 ps-3"
-                  style={{ color: "#717171" }}
+                  className="text-start ps-3"
+                  style={{ color: "#717171",fontSize:"1rem", fontWeight:"500" }}
                 >
                   Lorem Ipsum dolor sit amet, This is <br />
                   is only dummy text. We will <br />
@@ -430,8 +460,8 @@ const Home = () => {
                   Wave FinLearn
                 </h4>
                 <p
-                  className="text-start fs-5 ps-3"
-                  style={{ color: "#717171" }}
+                  className="text-start ps-3"
+                  style={{ color: "#717171",fontSize:"1rem", fontWeight:"500" }}
                 >
                   Lorem Ipsum dolor sit amet, This is <br />
                   is only dummy text. We will <br />
@@ -443,27 +473,27 @@ const Home = () => {
                 />
               </div>
               <div class="frame-115 border-liner">
-                <div class="wave-wallet">Wave Wallet</div>
-                <div class="lorem-ipsum-dolor-sit-amet-this-is-is-only-dummy-text-we-will-replace-this-with-real-one-later2">
-                  Lorem Ipsum dolor sit amet, This is
-                  <br />
-                  is only dummy text. We will
-                  <br />
-                  replace this with real one later.
-                </div>
-              </div>
-              <div class="frame-116 border-liner">
-                <h4 className="text-start fw-bolder pt-5 ps-3">Wave Card</h4>
-
+              <h4 className="text-center fw-bolder pt-5">Wave Wallet</h4>
                 <p
-                  className="text-start fs-5 ps-3"
-                  style={{ color: "#717171" }}
+                  className="text-start ps-3"
+                  style={{ color: "#717171",fontSize:"1rem", fontWeight:"500" }}
                 >
                   Lorem Ipsum dolor sit amet, This is <br />
                   is only dummy text. We will <br />
                   replace this with real one later.
                 </p>
+              </div>
+              <div class="frame-116 border-liner">
+              <h4 className="text-start ps-3 fw-bolder pt-5">Wave Card</h4>
 
+                <p
+                  className="text-start ps-3"
+                  style={{ color: "#717171",fontSize:"1rem", fontWeight:"500" }}
+                >
+                  Lorem Ipsum dolor sit amet, This is <br />
+                  is only dummy text. We will <br />
+                  replace this with real one later.
+                </p>
                 <img
                   class="d-3580698-12-f-6-42-ff-946-d-5-c-3-ec-16-a-5-b-72"
                   src={i23}
@@ -475,8 +505,8 @@ const Home = () => {
                 </h4>
 
                 <p
-                  className="text-start fs-5 ps-3"
-                  style={{ color: "#717171" }}
+                  className="text-start ps-3"
+                  style={{ color: "#717171",fontSize:"1rem", fontWeight:"500" }}
                 >
                   Lorem Ipsum dolor sit amet, This is <br />
                   is only dummy text. We will <br />
@@ -489,8 +519,8 @@ const Home = () => {
                 </h4>
 
                 <p
-                  className="text-start fs-5 ps-3"
-                  style={{ color: "#717171" }}
+                  className="text-start ps-3"
+                  style={{ color: "#717171",fontSize:"1rem", fontWeight:"500" }}
                 >
                   Lorem Ipsum dolor sit amet, This is <br />
                   is only dummy text. We will <br />
@@ -503,8 +533,8 @@ const Home = () => {
                 </h4>
 
                 <p
-                  className="text-start fs-5 ps-3"
-                  style={{ color: "#717171" }}
+                  className="text-start ps-3"
+                  style={{ color: "#717171",fontSize:"1rem", fontWeight:"500" }}
                 >
                   Lorem Ipsum dolor sit amet, This is <br />
                   is only dummy text. We will <br />
@@ -517,8 +547,8 @@ const Home = () => {
                 </h4>
 
                 <p
-                  className="text-start fs-5 ps-3"
-                  style={{ color: "#717171" }}
+                  className="text-start ps-3"
+                  style={{ color: "#717171",fontSize:"1rem", fontWeight:"500" }}
                 >
                   Lorem Ipsum dolor sit amet, This is <br />
                   is only dummy text. We will <br />
@@ -532,13 +562,13 @@ const Home = () => {
                   </h4>
 
                   <p
-                    className="text-start fs-5 ps-3"
-                    style={{ color: "#717171" }}
-                  >
-                    Lorem Ipsum dolor sit amet, This is <br />
-                    is only dummy text. We will <br />
-                    replace this with real one later.
-                  </p>
+                  className="text-start ps-3"
+                  style={{ color: "#717171",fontSize:"1rem", fontWeight:"500" }}
+                >
+                  Lorem Ipsum dolor sit amet, This is <br />
+                  is only dummy text. We will <br />
+                  replace this with real one later.
+                </p>
                 </div>
               </div>
               <div class="frame-114">
@@ -546,13 +576,15 @@ const Home = () => {
                   Wave Crypto Exchange
                 </h4>
 
-                <p className="text-start fs-5 ps-3" style={{ color: "#fff" }}>
+                <p
+                  className="text-start ps-3"
+                  style={{ color: "#717171",fontSize:"1rem", fontWeight:"500" }}
+                >
                   Lorem Ipsum dolor sit amet, This is <br />
                   is only dummy text. We will <br />
                   replace this with real one later.
                 </p>
-
-                <p class="fw-bold text-white ps-3 text-decoration-underline">
+                <p class="fw-bold text-white ps-3">
                   Learn More
                 </p>
                 <img
@@ -566,8 +598,8 @@ const Home = () => {
 
         {/* presale part */}
 
-        <div className="container">
-          <div class="presale mt-5">
+        <div className="container larg-p">
+          <div class="presale">
             <div class="ellipse-4"></div>
             <div class="ellipse-5"></div>
             <img
@@ -587,17 +619,17 @@ const Home = () => {
             <img src={i35} className="floating-asset asset35 z-2" alt="i1" />
             <img src={i38} className="floating-asset asset37" alt="i1" />
 
-            <p className="text-center pt-5 text-primary fw-bold">PRESALE2025</p>
+            <p className="text-center pt-5 text-primary fw-semibold"style={{fontSize:"1.1rem"}}>PRESALE2025</p>
             <h1 className="text-center fw-bolder g-text">
               World's First Real World Assets (RWA)
             </h1>
             <h1 className="text-center fw-bolder g-text">Backed Presale</h1>
-            <p className="text-center text-secondary">
+            <p className="text-center text-secondary fw-semibold">
               OneWave Presale sets a new benchmark in crypto—backed by
               real-world assets <br /> like gold, silver, and certified gems for
               unmatched trust and value.
             </p>
-            <div className="container-fluid  py-5 mt-5 z-0">
+            <div className="container px-0 py-5 mt-5 z-0">
               <div className="row gx-4 justify-content-center">
                 {/* <!-- Repeat for each presale card --> */}
                 <div className="col-md-6 col-lg-3 mb-4">
@@ -861,68 +893,76 @@ const Home = () => {
         {/* q1 q2 */}
 
         <div className="container pt-5 mt-5">
-          <div class="roadmap">
-            <div class="frame-86">
+          <div className="roadmap" style={{ height: "300vh" }}>
+            <div className="frame-86" ref={targetRef} style={{ height: "300vh" }} >
               <p className="text-center pt-5 text-primary fw-bold">ROADMAP</p>
               <h1 className="text-center fw-bolder g-text">
                 Milestones And Future Plans
               </h1>
-              <div class="ellipse-7"></div>
-              <div class="ellipse-6"></div>
-              <div class="frame-108">
-                <div class="frame-97">
-                  <div class="frame-96">
-                    <div class="q-1-2025">Q1 - 2025</div>
-                    <div class="launch-of-the-one-wave-platform-community-airdrop-through-tap-to-earn-games-presale-staking-launch-for-the-wave-token-introduction-of-rwa-backed-presale-and-staking-release-of-the-wave-wallet-app-for-easy-crypto-management">
-                      - Launch of the OneWave Platform
-                      <br />
-                      - Community Airdrop through tap-to-earn games.
-                      <br />
-                      - Presale &amp; Staking launch for the WAVE token.
-                      <br />
-                      - Introduction of RWA backed Presale and Staking
-                      <br />- Release of the Wave Wallet App for easy crypto
-                      management.
+
+              <div className="ellipse-7"></div>
+              <div className="ellipse-6"></div>
+
+              <section
+                className=""
+                style={{ height: "300vh" }}
+              >
+                <div className="position-sticky top-0 d-flex align-items-center overflow-x-hidden">
+                  <motion.div style={{ x }} className="d-flex gap-4">
+                    {/* Q1 */}
+                    <div className="frame-97">
+                      <div className="frame-96">
+                        <div className="q-1-2025">Q1 - 2025</div>
+                        <div className="launch-of-the-one-wave-platform-community-airdrop-through-tap-to-earn-games-presale-staking-launch-for-the-wave-token-introduction-of-rwa-backed-presale-and-staking-release-of-the-wave-wallet-app-for-easy-crypto-management">
+                          - Launch of the OneWave Platform <br />
+                          - Community Airdrop through tap-to-earn games. <br />
+                          - Presale & Staking launch for the WAVE token. <br />
+                          - Introduction of RWA backed Presale and Staking{" "}
+                          <br />- Release of the Wave Wallet App for easy crypto
+                          management.
+                        </div>
+                        {/* <div className="rectangle-8"></div> */}
+                      </div>
+                      <img className="line-1" src="line-10.svg" alt="line-1" />
                     </div>
-                    <div class="rectangle-8"></div>
-                  </div>
-                  <img class="line-1" src="line-10.svg" />
+
+                    {/* Q2 */}
+                    <div className="frame-98">
+                      <div className="q-2-2025">Q2 - 2025</div>
+                      <div className="listing-on-tracking-sites-like-coin-market-cap-cmc-and-coin-gecko-cg-listing-on-launchpads-for-wider-accessibility-integration-of-crypto-gaming-utilities-for-play-to-earn-and-tap-to-earn-launch-of-the-wave-crypto-card-for-seamless-spending-introduction-of-the-crypto-payment-gateway-for-businesses-listing-on-multiple-reputed-crypto-exchanges-for-liquidity">
+                        - Listing on Tracking Sites like CoinMarketCap (CMC) and
+                        CoinGecko (CG). <br />
+                        - Listing on Launchpads for wider accessibility. <br />
+                        - Integration of Crypto Gaming Utilities for
+                        play-to-earn and tap-to-earn. <br />
+                        - Launch of the Wave Crypto Card for seamless spending.{" "}
+                        <br />
+                        - Introduction of the Crypto Payment Gateway for
+                        businesses. <br />- Listing on Multiple Reputed Crypto
+                        Exchanges for liquidity.
+                      </div>
+                      <img className="line-2" src="line-20.svg" alt="line-2" />
+                    </div>
+
+                    {/* Q3 */}
+                    <div className="frame-99">
+                      <div className="q-3-2025">Q3 - 2025</div>
+                      <div className="arbitrage-bot-utility-through-a-subscription-model-launch-of-the-traditional-staking-platform-for-passive-income-introduction-of-the-nft-marketplace-for-digital-asset-trading">
+                        - Arbitrage Bot Utility through a subscription model.{" "}
+                        <br />
+                        - Launch of the Traditional Staking Platform for passive
+                        income. <br />- Introduction of the NFT Marketplace for
+                        digital asset trading.
+                      </div>
+                      <img className="line-22" src="line-21.svg" alt="line-3" />
+                    </div>
+                  </motion.div>
                 </div>
-                <div class="frame-98">
-                  <div class="q-2-2025">Q2 - 2025</div>
-                  <div class="listing-on-tracking-sites-like-coin-market-cap-cmc-and-coin-gecko-cg-listing-on-launchpads-for-wider-accessibility-integration-of-crypto-gaming-utilities-for-play-to-earn-and-tap-to-earn-launch-of-the-wave-crypto-card-for-seamless-spending-introduction-of-the-crypto-payment-gateway-for-businesses-listing-on-multiple-reputed-crypto-exchanges-for-liquidity">
-                    - Listing on Tracking Sites like CoinMarketCap (CMC) and
-                    CoinGecko (CG).
-                    <br />
-                    - Listing on Launchpads for wider accessibility.
-                    <br />
-                    - Integration of Crypto Gaming Utilities for play-to-earn
-                    and tap-to-earn.
-                    <br />
-                    - Launch of the Wave Crypto Card for seamless spending.
-                    <br />
-                    - Introduction of the Crypto Payment Gateway for businesses.
-                    <br />- Listing on Multiple Reputed Crypto Exchanges for
-                    liquidity.
-                  </div>
-                  <img class="line-2" src="line-20.svg" />
-                </div>
-                <div class="frame-99">
-                  <div class="q-3-2025">Q3 - 2025</div>
-                  <div class="arbitrage-bot-utility-through-a-subscription-model-launch-of-the-traditional-staking-platform-for-passive-income-introduction-of-the-nft-marketplace-for-digital-asset-trading">
-                    - Arbitrage Bot Utility through a subscription model.
-                    <br />
-                    - Launch of the Traditional Staking Platform for passive
-                    income.
-                    <br />- Introduction of the NFT Marketplace for digital
-                    asset trading.
-                  </div>
-                  <img class="line-22" src="line-21.svg" />
-                </div>
-              </div>
+              </section>
             </div>
-            <img class="frame-107" src={i50} />
-            <img class="group-5 img-fluid" src={i51} />
+
+            <img className="frame-107" src={i50} alt="frame-107" />
+            <img className="group-5 img-fluid" src={i51} alt="group-5" />
           </div>
         </div>
 
@@ -1123,98 +1163,202 @@ const Home = () => {
             Featured by Top Publications Around the World
           </h1>
           <div class="featured-in shadow-none">
-            <div class="frame-1597880383 shadow-none" >
-              <div class="frame-41 shadow-none" >
+            <div class="frame-1597880383 shadow-none">
+              <div class="frame-41 shadow-none">
                 <div class="frame-39 shadow-none">
-                  <div class="frame-27">
-                    <img class="image-8" src={i52} />
-                  </div>
-                  <div class="frame-412">
-                    <img class="image" src={i53} />
-                  </div>
-                  <div class="frame-28">
-                    <img class="image2" src={i54} />
-                  </div>
-                  <div class="frame-35">
-                    <img class="image3" src={i55} />
-                  </div>
-                  <div class="frame-36">
-                    <img class="image4" src={i56} />
-                  </div>
-                  <div class="frame-37">
-                    <img class="image-10" src={i57} />
-                  </div>
-                  <div class="frame-38">
-                    <img class="image5" src={i58} />
-                  </div>
-                  <div class="frame-392">
-                    <img class="image6" src={i59} />
-                  </div>
-                  <div class="frame-40">
-                    <img class="image3" src={i60} />
+                  <div className="d-flex">
+                    <motion.div
+                      initial={{ x: "0" }}
+                      animate={{ x: "-100%" }}
+                      transition={{
+                        duration: 30,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                      className="d-flex gap-3 flex-shrink-0 m-2"
+                    >
+                      <div class="frame-27">
+                        <img class="image-8" src={i52} />
+                      </div>
+                      <div class="frame-412">
+                        <img class="image" src={i53} />
+                      </div>
+                      <div class="frame-28">
+                        <img class="image2" src={i54} />
+                      </div>
+                      <div class="frame-35">
+                        <img class="image3" src={i55} />
+                      </div>
+                      <div class="frame-36">
+                        <img class="image4" src={i56} />
+                      </div>
+                      <div class="frame-37">
+                        <img class="image-10" src={i57} />
+                      </div>
+                    </motion.div>
+                    <motion.div
+                      initial={{ x: "0" }}
+                      animate={{ x: "-100%" }}
+                      transition={{
+                        duration: 30,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                      className="d-flex gap-3 flex-shrink-0 m-2"
+                    >
+                      <div class="frame-27">
+                        <img class="image-8" src={i52} />
+                      </div>
+                      <div class="frame-412">
+                        <img class="image" src={i53} />
+                      </div>
+                      <div class="frame-28">
+                        <img class="image2" src={i54} />
+                      </div>
+                      <div class="frame-35">
+                        <img class="image3" src={i55} />
+                      </div>
+                      <div class="frame-36">
+                        <img class="image4" src={i56} />
+                      </div>
+                      <div class="frame-37">
+                        <img class="image-10" src={i57} />
+                      </div>
+                    </motion.div>
                   </div>
                 </div>
                 <div class="frame-402">
-                  <div class="frame-362">
-                    <img class="frame" src={i61} />
-                  </div>
-                  <div class="frame-393">
-                    <div class="frame2">
-                      <img class="frame-45" src={i62} />
-                    </div>
-                  </div>
-                  <div class="frame-372">
-                    <img class="frame3" src={i63} />
-                  </div>
-                  <div class="frame-38">
-                    <img class="frame4" src={i64} />
-                  </div>
-                  <div class="frame-40">
-                    <img class="image-31" src={i65} />
-                  </div>
-                  <div class="frame-452">
-                    <img class="image7" src={i66} />
-                  </div>
-                  <div class="frame-46">
-                    <img class="image7" src={i67} />
-                  </div>
-                  <div class="frame-47">
-                    <img class="image7" src={i68} />
-                  </div>
-                  <div class="frame-48">
-                    <img class="image7" src={i69} />
-                  </div>
-                  <div class="frame-49">
-                    <img class="image-31" src={i70} />
+                  <div className="d-flex">
+                    <motion.div
+                      initial={{ x: "-100%" }}
+                      animate={{ x: "0" }}
+                      transition={{
+                        duration: 30,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                      className="d-flex gap-3 flex-shrink-0 m-2"
+                    >
+                      <div class="frame-362">
+                        <img class="frame" src={i58} />
+                      </div>
+                      <div class="frame-393">
+                        <div class="frame2">
+                          <img class="frame-45" src={i59} />
+                        </div>
+                      </div>
+                      <div class="frame-372">
+                        <img class="frame3" src={i60} />
+                      </div>
+                      <div class="frame-38">
+                        <img class="frame4" src={i61} />
+                      </div>
+                      <div class="frame-40">
+                        <img class="image-31" src={i62} />
+                      </div>
+                      <div class="frame-452">
+                        <img class="image7" src={i63} />
+                      </div>
+                      <div class="frame-46">
+                        <img class="image7" src={i64} />
+                      </div>
+                    </motion.div>
+                    <motion.div
+                      initial={{ x: "-100%" }}
+                      animate={{ x: "0" }}
+                      transition={{
+                        duration: 30,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                      className="d-flex gap-3 flex-shrink-0 m-2"
+                    >
+                      <div class="frame-362">
+                        <img class="frame" src={i58} />
+                      </div>
+                      <div class="frame-393">
+                        <div class="frame2">
+                          <img class="frame-45" src={i59} />
+                        </div>
+                      </div>
+                      <div class="frame-372">
+                        <img class="frame3" src={i60} />
+                      </div>
+                      <div class="frame-38">
+                        <img class="frame4" src={i61} />
+                      </div>
+                      <div class="frame-40">
+                        <img class="image-31" src={i62} />
+                      </div>
+                      <div class="frame-452">
+                        <img class="image7" src={i63} />
+                      </div>
+                      <div class="frame-46">
+                        <img class="image7" src={i64} />
+                      </div>
+                    </motion.div>
                   </div>
                 </div>
                 <div class="frame-413">
-                  <div class="frame-27">
-                    <img class="image-8" src={i71} />
-                  </div>
-                  <div class="frame-412">
-                    <img class="image8" src={i72} />
-                  </div>
-                  <div class="frame-28">
-                    <img class="image-9" src={i60} />
-                  </div>
-                  <div class="frame-35">
-                    <img class="image9" src={i70} />
-                  </div>
-                  <div class="frame-36">
-                    <img class="image-10" src={i59} />
-                  </div>
-                  <div class="frame-37">
-                    <img class="image6" src={i72} />
-                  </div>
-                  <div class="frame-38">
-                    <img class="image3" src={i71} />
-                  </div>
-                  <div class="frame-392">
-                    <img class="image-10" src={i72} />
-                  </div>
-                  <div class="frame-40">
-                    <img class="image-10" src={i72} />
+                  <div className="d-flex">
+                    <motion.div
+                      initial={{ x: "0" }}
+                      animate={{ x: "-100%" }}
+                      transition={{
+                        duration: 30,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                      className="d-flex gap-3 flex-shrink-0 m-2"
+                    >
+                      <div class="frame-27">
+                        <img class="image-8" src={i65} />
+                      </div>
+                      <div class="frame-412">
+                        <img class="image8" src={i66} />
+                      </div>
+                      <div class="frame-28">
+                        <img class="image-9" src={i67} />
+                      </div>
+                      <div class="frame-35">
+                        <img class="image9" src={i68} />
+                      </div>
+                      <div class="frame-36">
+                        <img class="image-10" src={i69} />
+                      </div>
+                      <div class="frame-37">
+                        <img class="image6" src={i70} />
+                      </div>
+                    </motion.div>
+                    <motion.div
+                      initial={{ x: "0" }}
+                      animate={{ x: "-100%" }}
+                      transition={{
+                        duration: 30,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                      className="d-flex gap-3 flex-shrink-0 m-2"
+                    >
+                      <div class="frame-27">
+                        <img class="image-8" src={i65} />
+                      </div>
+                      <div class="frame-412">
+                        <img class="image8" src={i66} />
+                      </div>
+                      <div class="frame-28">
+                        <img class="image-9" src={i67} />
+                      </div>
+                      <div class="frame-35">
+                        <img class="image9" src={i68} />
+                      </div>
+                      <div class="frame-36">
+                        <img class="image-10" src={i69} />
+                      </div>
+                      <div class="frame-37">
+                        <img class="image6" src={i70} />
+                      </div>
+                    </motion.div>
                   </div>
                 </div>
               </div>

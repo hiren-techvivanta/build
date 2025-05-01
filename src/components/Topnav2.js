@@ -30,7 +30,7 @@ const Topnav2 = () => {
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown px-2">
                 <a
-                  class="nav-link dropdown-toggle "
+                  class="nav-link dropdown-toggle fw-bold"
                   href="#"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -61,7 +61,7 @@ const Topnav2 = () => {
               </li>
               <li class="nav-item dropdown px-2">
                 <a
-                  class="nav-link dropdown-toggle "
+                  class="nav-link dropdown-toggle fw-bold"
                   href="#"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -91,31 +91,31 @@ const Topnav2 = () => {
                 </ul>
               </li>
               <li class="nav-item px-2">
-          <a class="nav-link " href="#">Lern</a>
+          <a class="nav-link fw-bold" href="#">Lern</a>
         </li>
         <li class="nav-item px-2">
-          <Link class="nav-link " to="/presale">Presele</Link>
+          <Link class="nav-link fw-bold" to="/presale">Presele</Link>
         </li>
         <li class="nav-item px-2">
-          <a class="nav-link " href="#">Staking</a>
+          <a class="nav-link fw-bold" href="#">Staking</a>
         </li>
         <li class="nav-item px-2">
-          <a class="nav-link " href="#">Roadmap</a>
+          <a class="nav-link fw-bold" href="#">Roadmap</a>
         </li>
         <li class="nav-item px-2">
-          <a class="nav-link " href="#">Tokenomics</a>
+          <a class="nav-link fw-bold" href="#">Tokenomics</a>
         </li>
         <li class="nav-item px-2">
-          <a class="nav-link " href="#">Team</a>
+          <a class="nav-link fw-bold" href="#">Team</a>
         </li>
         <li class="nav-item px-2">
-          <a class="nav-link " href="#">Downloads</a>
+          <a class="nav-link fw-bold" href="#">Downloads</a>
         </li>
         <li class="nav-item px-2">
-          <a class="nav-link " href="#">Contact</a>
+          <a class="nav-link fw-bold" href="#">Contact</a>
         </li>
             </ul>
-              <button class="rounded-2 custom-login px-4 py-2" type="submit" onClick={() => navigate("/signin")}>
+              <button class="btn btn-primary rounded-3 px-4 py-2" type="submit" onClick={() => navigate("/signin")}>
                 Login
               </button>
           </div>

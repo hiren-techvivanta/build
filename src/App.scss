@@ -668,6 +668,9 @@ $input-focus-box-shadow: none !default;
   .w-md-50 {
     width: 50% !important;
   }
+  .w-md-25 {
+    width: 40% !important;
+  }
 }
 .custom-border {
   border: 1px solid #000000;
@@ -706,18 +709,18 @@ $breakpoint-xs: 576px;
   .community2 {
     background: #f5f5f5;
     border: 1px solid #cdcdcd;
-    padding: 32px 20px;
+    padding: 15px 20px;
     width: 100%;
     height: auto;
-    min-height: 294px;
+    min-height: 230px;
     overflow: hidden;
 
     @media (min-width: $breakpoint-lg) {
-      padding: 32px 15px;
+      padding: 15px 15px;
     }
 
     @media (min-width: $breakpoint-xl) {
-      padding: 32px 10px;
+      padding: 15px 10px;
     }
   }
 
@@ -895,12 +898,11 @@ $breakpoint-xs: 576px;
     background: #ffffff;
     border-radius: 12px;
     border: 1px solid #cccccc;
-    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1); // Reduced shadow
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 6px; // Reduced padding
-    min-height: 70px; // Slightly reduced height
+    height: 65px;
 
     @media (min-width: $breakpoint-lg) {
       min-height: 65px; // Even smaller for large screens
@@ -1118,15 +1120,15 @@ $breakpoints: (
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    @include font-plus-jakarta("ExtraBold", 1rem);
+    font-weight: 700;
     text-transform: uppercase;
 
     @include respond-to(md) {
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
 
     @include respond-to(lg) {
-      font-size: 1.375rem; // 22px
+      font-size: 1rem; // 22px
     }
   }
 
@@ -1144,7 +1146,6 @@ $breakpoints: (
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    @include font-plus-jakarta("Bold", 1.75rem);
     margin: 0;
 
     @include respond-to(md) {
@@ -1152,7 +1153,8 @@ $breakpoints: (
     }
 
     @include respond-to(lg) {
-      font-size: 3rem; // 48px
+      font-size: 2.4rem; 
+      font-weight: 700;
     }
   }
 
@@ -1161,16 +1163,17 @@ $breakpoints: (
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    @include font-plus-jakarta("Medium", 1rem);
     margin: 0;
     line-height: 1.5;
 
     @include respond-to(md) {
-      font-size: 1.125rem;
+      font-size: 0.9rem;
+      font-weight: 600;
     }
 
     @include respond-to(lg) {
-      font-size: 1.375rem; // 22px
+      font-size: 1rem; // 22px
+      font-weight: 600;
     }
   }
 
@@ -1191,7 +1194,6 @@ $breakpoints: (
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    @include font-plus-jakarta("SemiBold", 0.875rem);
     white-space: nowrap;
 
     @include respond-to(md) {
@@ -1199,7 +1201,8 @@ $breakpoints: (
     }
 
     @include respond-to(lg) {
-      font-size: 1.375rem; // 22px
+      font-size: 1.15rem; 
+      font-weight: 600;
     }
   }
 
@@ -1208,6 +1211,7 @@ $breakpoints: (
     border-radius: 50%;
     width: 6px;
     height: 6px;
+    padding: 3px;
 
     @include respond-to(md) {
       width: 8px;
@@ -1215,8 +1219,8 @@ $breakpoints: (
     }
 
     @include respond-to(lg) {
-      width: 10px;
-      height: 10px;
+      width: 5px;
+      height: 5px;
     }
   }
 }
@@ -1246,7 +1250,8 @@ $breakpoints: (
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    @include font-plus-jakarta("Bold", 24px);
+    font-size: 1.2rem;
+    font-weight: 700;
     text-align: center;
     margin: 0;
   }
@@ -1284,7 +1289,7 @@ $breakpoints: (
     align-items: center;
     justify-content: center;
     padding: 12px;
-    height: 100px;
+    height: 70px;
   }
 
   &__logo {
@@ -1452,7 +1457,7 @@ body {
 .frame-134 {
   align-self: stretch;
   flex-shrink: 0;
-  height: 1520px;
+  height: 1300px;
   position: relative;
 }
 .frame-60 {
@@ -1471,7 +1476,7 @@ body {
   );
   // border-image-slice: 1;
   width: 49%;
-  height: 594px;
+  height: 470px;
   position: absolute;
   left: 0;
   top: 0px;
@@ -1496,7 +1501,7 @@ body {
   @include respond-to(md) {
     left: 50%;
     translate: -50%;
-    top: 290px;
+    top: 140px;
   }
 }
 .wave-blockchain {
@@ -1544,7 +1549,7 @@ body {
   );
   // border-image-slice: 1;
   width: 49%;
-  height: 594px;
+  height: 470px;
   position: absolute;
   left: 50%;
   top: 1530px;
@@ -1553,7 +1558,7 @@ body {
   @include respond-to(md) {
     width: 24%;
     left: 0%;
-    top: 618px;
+    top: 480px;
   }
 }
 .crypto-gaming {
@@ -1581,7 +1586,7 @@ body {
   top: 360px;
 
   @include respond-to(md) {
-    top: 305px;
+    top: 140px;
   }
 }
 .frame-117 {
@@ -1600,7 +1605,7 @@ body {
   );
   // border-image-slice: 1;
   width: 50%;
-  height: 615px;
+  height: 470px;
   position: absolute;
   left: 50%;
   top: 350px;
@@ -1639,7 +1644,7 @@ body {
   @include respond-to(md) {
     left: 50%;
   translate: -50%;
-  top: 300px;
+  top: 140px;
   }
 }
 .frame-110 {
@@ -1658,7 +1663,7 @@ body {
   );
   // border-image-slice: 1;
   width: 49%;
-  height: 341px;
+  height: 277px;
   position: absolute;
   left: 50%;
   top: 0px;
@@ -1724,7 +1729,7 @@ body {
   );
   // border-image-slice: 1;
   width: 49%;
-  height: 341px;
+  height: 277px;
   position: absolute;
   left: 0%;
   top: 618px;
@@ -1778,7 +1783,7 @@ body {
   );
   // border-image-slice: 1;
   width: 49%;
-  height: 284px;
+  height: 220px;
   position: absolute;
   left: 0%;
   top: 1830px;
@@ -1787,7 +1792,7 @@ body {
   @include respond-to(md) {
     width: 24%;
     left: 25%;
-    top: 928px;
+    top: 730px;
   }
  
 }
@@ -1820,7 +1825,7 @@ body {
   );
   // border-image-slice: 1;
   width: 49%;
-  height: 284px;
+  height: 220px;
   position: absolute;
   left: 0;
   top: 1530px;
@@ -1829,7 +1834,7 @@ body {
   @include respond-to(md) {
     width: 49%;
     left: 50%;
-  top: 928px;
+  top: 730px;
   }
 }
 .wave-card {
@@ -1889,7 +1894,7 @@ body {
   );
   // border-image-slice: 1;
   width: 49%;
-  height: 265px;
+  height: 245px;
   position: absolute;
   left: 0%;
   top: 2130px;
@@ -1898,7 +1903,7 @@ body {
   @include respond-to(md) {
     width: 24%;
     left: 75.5%;
-    top: 639px;
+    top: 480px;
   }
 }
 .wave-micro-tasks-app {
@@ -1930,10 +1935,10 @@ body {
   );
   // border-image-slice: 1;
   width: 49%;
-  height: 284px;
+  height: 220px;
   position: absolute;
   left: 0;
-  top: 1236px;
+  top: 960px;
   display: none;
   
   overflow: hidden;
@@ -1971,7 +1976,7 @@ body {
   );
   // border-image-slice: 1;
   width: 49%;
-  height: 284px;
+  height: 220px;
   position: absolute;
   left:0%;
   top: 2400px;
@@ -1980,7 +1985,7 @@ body {
   @include respond-to(md) {
     width: 24%;
     left: 25%;
-    top: 1236px;
+    top: 960px;
   }
 }
 .wave-ai-calling {
@@ -2012,7 +2017,7 @@ body {
   );
   // border-image-slice: 1;
   width: 49%;
-  height: 284px;
+  height: 220px;
   position: absolute;
   left: 50%;
   top: 2130px;
@@ -2021,7 +2026,7 @@ body {
   @include respond-to(md) {
     width: 24%;
     left: 50%;
-    top: 1236px;
+    top: 960px;
   }
 }
 .international-forex {
@@ -2053,7 +2058,7 @@ body {
   );
   // border-image-slice: 1;
   width: 49%;
-  height: 284px;
+  height: 220px;
   position: absolute;
   left: 50%;
   top: 2430px;
@@ -2062,7 +2067,7 @@ body {
   @include respond-to(md) {
     width: 24%;
     left: 75.5%;
-    top: 1236px;
+    top: 960px;
   }
 }
 .wave-arbitrage-bot {
@@ -2094,7 +2099,7 @@ body {
   );
   // border-image-slice: 1;
   width: 100%;
-  height: 539px;
+  height: 440px;
   position: absolute;
   left: 0%;
   top: 980px;
@@ -2103,7 +2108,7 @@ body {
   @include respond-to(md) {
     width: 50%;
     left: 25%;
-    top: calc(50% - 395px);
+    top: 285px;
   }
 }
 .wave-crypto-exchange {
@@ -2156,7 +2161,7 @@ body {
 
   @include respond-to(md) {
     left: 175px;
-    top: 138px;
+    top: -19px;
   }
 }
 
@@ -2709,10 +2714,7 @@ body {
   gap: 72px;
   align-items: flex-start;
   justify-content: flex-start;
-  position: absolute;
-  left: 50%;
-  translate: -50%;
-  top: 277px;
+  translate: 50%;
 }
 .frame-97 {
   flex-shrink: 0;
@@ -4032,4 +4034,67 @@ $placeholder-color: rgba(10, 12, 0, 0.5);
   @include respond-to(md) {
     font-size: 3.5rem;
   }
+}
+
+.larg-p {
+  padding-top: 80rem;
+
+  @include respond-to(md) {
+   padding-top: 0;
+  }
+}
+
+.top-notification-bar,
+.top-notification-bar * {
+  box-sizing: border-box;
+}
+.top-notification-bar {
+  background: var(
+    --main,
+    linear-gradient(
+      95.75deg,
+      rgba(36, 119, 241, 1) 0%,
+      rgba(0, 70, 173, 1) 100%
+    )
+  );
+  height: 30px;
+  position: relative;
+  overflow: hidden;
+}
+._1-922 {
+  width: 33%;
+  height: auto;
+  transform: rotate(0deg) scale(-1, 1);
+}
+._1-923 {
+  width: 33%;
+}
+.frame-20 {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  left: 50%;
+  translate: -50% -50%;
+  top: 50%;
+}
+.join-world-s-first-rwa-backed-presale {
+  background: linear-gradient(to left, #ffffff, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-family: "PlusJakartaSans-SemiBold", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+}
+.frame {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
 }
