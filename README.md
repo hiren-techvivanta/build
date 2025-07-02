@@ -1,6 +1,9 @@
 ## Wave 
 ### to run project
-run code ``` npm i ```
+run code 
+```
+npm i
+ ```
 if this not work then use ``` npm i --force```
 then run ```npm start```
 for build ``` npm run build ```
